@@ -4,10 +4,10 @@
 
 url: http://dashboarddude.com
 title: Dashboard Dude
-subtitle: A blogging framework for hackers.
-author: Your Name
+subtitle: You've got enough data. It's time to get a dashboard.
+author: Rowan
 simple_search: http://google.com/search
-description:
+description: You've got enough data. It's everywhere. But what are you actually doing with it? What CAN you do with it? I can help with that. It's time to get a dashboard.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -89,11 +89,14 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: dashboarddude
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-37903037-1
 
 # Facebook Like
 facebook_like: false
+
+# Hacker news like button
+hn_like_button: true
