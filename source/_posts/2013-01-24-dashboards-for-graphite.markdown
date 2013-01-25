@@ -15,11 +15,11 @@ enterprise-grade (and much more __expensive__) software.
 While Graphite is fantastic, the front-end that comes with it leaves a little
 bit to be desired. You _can_ use the built-in rendering and dashboard for viewing
 your system metrics, just like you _can_ use Internet Explorer 6 to browse the
-inter net - it'll work, but [you're gonna have a bad time](http://www.quickmeme.com/meme/3osf83/).
+Internet - it'll work, but [you're gonna have a bad time](http://www.quickmeme.com/meme/3osf83/).
 
 Thankfully, there are a lot of alternatives out there, but the [Graphite Tools](http://graphite.readthedocs.org/en/latest/tools.html)
-page is a little out of date (with abandoned/incomplete projects), so here's a 
-list or dashboards I have or would consider using:
+page is a little out of date (with abandoned/incomplete projects), __so here's a 
+list or dashboards I have or would consider using...__
 
 <!--more-->
 
@@ -138,9 +138,8 @@ gauge widget which works really nicely with the StatsD's gauge metrics.
 The have a [great demo of the various widgets in action](http://dashingdemo.herokuapp.com/sampletv).
 
 ## Need Help?
-There you have it! If you guys have any experiences or comments for these
-dashboards, let me know below. If you have any dashboards I missed, please let
-me know in the comments.
+There you have it! Let me your personal experiences and recommendations with
+these dashboards, or if I missed any you think are worthwhile in the comments below.
 
 If you need any help setting up any of these dashboards, or Graphite itself,
 check out [my dashboard consulting services](/services) and [get in touch with me](/contact).
