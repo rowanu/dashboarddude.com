@@ -105,6 +105,10 @@ widget, all I need to include in the SCSS is:
   
     @include transition(background-color, 1s, linear);
 
+This might be a bit of overkill for the one usage, originally considered
+some other transitions (and may still include them in a future version), so I
+'did it right' the first time.
+
 ### CoffeeScript Functionality
 
 {% img right /images/posts/dashing-hotness-widget/neutral.png 250 250 %}
@@ -146,15 +150,15 @@ Here's the `onData` listener that makes the widget work (in CoffeeScript):
           Math.ceil (value - cool) / bucketSize
 
 It could've easily been shortened to a few lines, but I like taking a few extra
-to make it a even more readable.
+to make it nice and readable.
 
 ## Conclusion
 
 Hopefully this will help you create your own widgets for Shopify's Dashing
 Dashboard.
 
-Kudos to the Shopify guys for making a cool piece of software, and making it so
-easy to extend!
+__Kudos to the Shopify guys__ for making a cool piece of software, and making it
+so easy to extend!
 
 If you've got a good idea for a widget (and it's not after September 13th,
 2013), you should enter the [Shopify Widget Challenge](http://dashing.challengepost.com/)!
