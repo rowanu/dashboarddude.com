@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Dashboard Dude]]></title>
-  <link href="http://rowanu.github.com/dashboarddude/atom.xml" rel="self"/>
-  <link href="http://rowanu.github.com/dashboarddude/"/>
-  <updated>2013-08-15T20:20:05-04:00</updated>
-  <id>http://rowanu.github.com/dashboarddude/</id>
+  <link href="http://dashboarddude.com/atom.xml" rel="self"/>
+  <link href="http://dashboarddude.com/"/>
+  <updated>2013-08-15T20:24:03-04:00</updated>
+  <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
     
@@ -15,18 +15,21 @@
   
   <entry>
     <title type="html"><![CDATA[Dashing Dashboard Widget Challenge: The Hotness]]></title>
-    <link href="http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
+    <link href="http://dashboarddude.com/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
     <updated>2013-08-16T14:49:00-04:00</updated>
-    <id>http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
-    <content type="html"><![CDATA[<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/hot.png" width="250" height="250" title="Hot hot hot!" ></p>
+    <id>http://dashboarddude.com/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://dashboarddude.com/images/posts/dashing-hotness-widget/hot.png" width="250" height="250" title="Hot hot hot!" ></p>
 
 <p>The friendly <a href="https://twitter.com/davefp">David from Shopify</a> contacted me
 recently about the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a> that they&#8217;re holding. I&#8217;ve
-written about <a href="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite">Dashing before</a>, and
+written about <a href="http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite">Dashing before</a>, and
 I&#8217;m a big fan of its style and versatility.</p>
 
 <p>It didn&#8217;t take me long to think of some widget ideas, so I thought I&#8217;d share
 what it took for me to enter the challenge with a basic idea.</p>
+
+<p>You can see the resulting widget <a href="https://gist.github.com/rowanu/6246149">in this
+gist</a>.</p>
 
 <!--more-->
 
@@ -85,7 +88,7 @@ most widgets in Dashing do).</p>
 
 <h2>Styling with SASS</h2>
 
-<p><img class="left" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/cool.png" width="250" height="250" title="Everything's cool" ></p>
+<p><img class="left" src="http://dashboarddude.com/images/posts/dashing-hotness-widget/cool.png" width="250" height="250" title="Everything's cool" ></p>
 
 <p>Dashing comes with <a href="http://sass-lang.com/">SASS</a> support, which is another nice
 touch by the developers.</p>
@@ -127,7 +130,7 @@ some other transitions (and may still include them in a future version), so I
 
 <h3>CoffeeScript Functionality</h3>
 
-<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/neutral.png" width="250" height="250"></p>
+<p><img class="right" src="http://dashboarddude.com/images/posts/dashing-hotness-widget/neutral.png" width="250" height="250"></p>
 
 <p>The widget functionality resides in a CoffeeScript/JavaScript file, which will
 be included by Dashing at runtime. All of the included widgets are written in
@@ -172,7 +175,8 @@ to make it nice and readable.</p>
 <h2>Conclusion</h2>
 
 <p>Hopefully this will help you create your own widgets for Shopify&#8217;s Dashing
-Dashboard.</p>
+Dashboard. You can see (and install) the widget yourself by checking out <a href="https://gist.github.com/rowanu/6246149">the
+gist</a>.</p>
 
 <p><strong>Kudos to the Shopify guys</strong> for making a cool piece of software, and making it
 so easy to extend!</p>
@@ -180,15 +184,15 @@ so easy to extend!</p>
 <p>If you&#8217;ve got a good idea for a widget (and it&#8217;s not after September 13th,
 2013), you should enter the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a>!</p>
 
-<p><img class="center" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/cold.png" width="250" height="250" title="Green is good" ></p>
+<p><img class="center" src="http://dashboarddude.com/images/posts/dashing-hotness-widget/cold.png" width="250" height="250" title="Green is good" ></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Installing Graphite with Ceres Awesomeness]]></title>
-    <link href="http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/"/>
+    <link href="http://dashboarddude.com/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/"/>
     <updated>2013-04-30T15:37:00-04:00</updated>
-    <id>http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness</id>
+    <id>http://dashboarddude.com/blog/2013/04/30/installing-graphite-with-ceres-awesomeness</id>
     <content type="html"><![CDATA[<p>The Dashboard Dude is still here, he&#8217;s just busy with Real Life™
 unfortunately&#8230;</p>
 
@@ -207,14 +211,14 @@ replacement for Whisper - Ceres.</p>
   
   <entry>
     <title type="html"><![CDATA[Dashboards for Graphite]]></title>
-    <link href="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/"/>
+    <link href="http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite/"/>
     <updated>2013-01-23T08:17:00-05:00</updated>
-    <id>http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite</id>
+    <id>http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite</id>
     <content type="html"><![CDATA[<p>It&#8217;s no secret I like <a href="http://graphite.wikidot.com/">Graphite</a> - it&#8217;s a great example of Open Source software
 which is just as good (actually, it&#8217;s even better) than similar closed-source,
 enterprise-grade (and much more <strong>expensive</strong>) software.</p>
 
-<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/boring.png" width="400" height="300" title="A bit dull..." ></p>
+<p><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/boring.png" width="400" height="300" title="A bit dull..." ></p>
 
 <p>While Graphite is fantastic, the front-end that comes with it leaves a little
 bit to be desired. You <em>can</em> use the built-in rendering and dashboard for viewing
@@ -238,7 +242,7 @@ graphs.</p>
 because it shifts the rendering work to your browser, rather than the server
 (which is already working to retrieve the metrics from disk, etc).</p>
 
-<p><a href="https://github.com/kenhub/giraffe"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/giraffe.png" width="150" height="300" title="Giraffe" ></a></p>
+<p><a href="https://github.com/kenhub/giraffe"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/giraffe.png" width="150" height="300" title="Giraffe" ></a></p>
 
 <h3><a href="https://github.com/kenhub/giraffe">Giraffe</a></h3>
 
@@ -250,7 +254,7 @@ performance, as even <a href="http://kenhub.github.com/giraffe/#dashboard=Demo&a
 
 <h3><a href="http://square.github.com/cubism/">Cubism.js</a></h3>
 
-<p><a href="http://square.github.com/cubism/"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/cubism.js.png" width="400" height="300" title="Cubism.js" ></a>
+<p><a href="http://square.github.com/cubism/"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/cubism.js.png" width="400" height="300" title="Cubism.js" ></a>
 This is a great dashboard for fitting a large number of metrics on one screen.
 The horizon graph is suited to comparing many similar metrics, and the default
 colour scheme is really easy on the eyes, without loosing detail.</p>
@@ -258,7 +262,7 @@ colour scheme is really easy on the eyes, without loosing detail.</p>
 <p>While the current values are displayed, you&#8217;ll need to mouse-over the previous
 updates which may not suit some dashboards.</p>
 
-<p><a href="http://jondot.github.com/graphene/"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/graphene.png" width="400" height="300" title="Graphene" ></a></p>
+<p><a href="http://jondot.github.com/graphene/"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/graphene.png" width="400" height="300" title="Graphene" ></a></p>
 
 <h3><a href="http://jondot.github.com/graphene/">Graphene</a></h3>
 
@@ -273,7 +277,7 @@ periods of time (but that can be changed with some extra CSS styling).</p>
 
 <h3><a href="https://github.com/obfuscurity/tasseo">Tasseo</a></h3>
 
-<p><a href="https://github.com/obfuscurity/tasseo"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/tasseo.png" width="400" height="300" title="Tasseo" ></a>
+<p><a href="https://github.com/obfuscurity/tasseo"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/tasseo.png" width="400" height="300" title="Tasseo" ></a>
 Another Rickshaw-based front-end, it&#8217;s a very light-weight dashboard for viewing
 many different metrics (ie. they don&#8217;t have to be on the same scale) at once.</p>
 
@@ -290,7 +294,7 @@ historical values a bit hard.</p>
 more set up and configuration to get running. Most reduce the load on your
 Graphite server by caching often-used data (eg. by using <a href="http://redis.io/">Redis</a>).</p>
 
-<p><a href="https://github.com/paperlesspost/graphiti"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/graphiti.jpeg" width="400" height="300" title="Graphiti" ></a></p>
+<p><a href="https://github.com/paperlesspost/graphiti"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/graphiti.jpeg" width="400" height="300" title="Graphiti" ></a></p>
 
 <h3><a href="https://github.com/paperlesspost/graphiti">Graphiti</a></h3>
 
@@ -307,7 +311,7 @@ so far, which isn&#8217;t really surprising given it&#8217;s by Jason Dixon (see
 It depends on Redis and PostreSQL, which also puts it at the top of the
 requirements list.</p>
 
-<p><a href="https://github.com/obfuscurity/descartes"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/descartes.png" width="400" height="200" title="Descartes" ></a>
+<p><a href="https://github.com/obfuscurity/descartes"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/descartes.png" width="400" height="200" title="Descartes" ></a>
 It has the ability to set templates for graphs, and uses sparklines to give you
 a high-level overview of your metrics and help you decide what you want to
 include in your dashboard, which is always useful.</p>
@@ -328,7 +332,7 @@ mention:</p>
 
 <h3><a href="https://github.com/ripienaar/gdash">GDash</a></h3>
 
-<p><a href="https://github.com/ripienaar/gdash"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/gdash.png" width="200" height="100" title="GDash" ></a>
+<p><a href="https://github.com/ripienaar/gdash"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/gdash.png" width="200" height="100" title="GDash" ></a>
 This dashboard is not client-side (it uses Graphite&#8217;s internal renderer for
 images) or database backed, so it&#8217;s more of a &#8220;skin&#8221; on the default dashboard.
 It lets you configure your dashboards using YAML, and is built on the Twitter
@@ -336,7 +340,7 @@ Bootstrap web-framework.</p>
 
 <h3><a href="https://github.com/Dieterbe/graph-explorer">Graph Explorer</a></h3>
 
-<p><a href="https://github.com/Dieterbe/graph-explorer"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/explorer.png" width="300" height="150" title="Graph Explorer" ></a>
+<p><a href="https://github.com/Dieterbe/graph-explorer"><img class="right" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/explorer.png" width="300" height="150" title="Graph Explorer" ></a>
 While this isn&#8217;t a dashboard (like the others in this list), it&#8217;s a new take on
 metric exploration for Graphite. Made to be very interactive, it can definitely
 help you decide what metrics to include in your dashboard. The nice thing is
@@ -345,7 +349,7 @@ usual metric explorer built-in to Graphite.</p>
 
 <h3><a href="http://shopify.github.com/dashing/">Dashing</a></h3>
 
-<p><a href="http://shopify.github.com/dashing/"><img class="left" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/dashing.png" width="200" height="200" title="Dashing" ></a>
+<p><a href="http://shopify.github.com/dashing/"><img class="left" src="http://dashboarddude.com/images/posts/dashboards-for-graphite/dashing.png" width="200" height="200" title="Dashing" ></a>
 A general-purpose dashboard by the boffins at <a href="http://www.shopify.com/">Shopify</a>, Dashing can accept data
 from many different sources, and display many different types of data through
 various widgets. This includes being able to display Graphite data through
@@ -363,7 +367,7 @@ The have a <a href="http://dashingdemo.herokuapp.com/sampletv">great demo of the
 these dashboards, or if I missed any you think are worthwhile in the comments below.</p>
 
 <p>If you need any help setting up any of these dashboards, or Graphite itself,
-check out <a href="http://rowanu.github.com/dashboarddude/services">my dashboard consulting services</a> and <a href="http://rowanu.github.com/dashboarddude/contact">get in touch with me</a>.</p>
+check out <a href="http://dashboarddude.com/services">my dashboard consulting services</a> and <a href="http://dashboarddude.com/contact">get in touch with me</a>.</p>
 ]]></content>
   </entry>
   

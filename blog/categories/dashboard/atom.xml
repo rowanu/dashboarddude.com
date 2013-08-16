@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: dashboard | Dashboard Dude]]></title>
-  <link href="http://rowanu.github.com/dashboarddude/blog/categories/dashboard/atom.xml" rel="self"/>
-  <link href="http://rowanu.github.com/dashboarddude/"/>
-  <updated>2013-08-15T20:20:05-04:00</updated>
-  <id>http://rowanu.github.com/dashboarddude/</id>
+  <link href="http://dashboarddude.com/blog/categories/dashboard/atom.xml" rel="self"/>
+  <link href="http://dashboarddude.com/"/>
+  <updated>2013-08-15T20:24:03-04:00</updated>
+  <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dashing Dashboard Widget Challenge: The Hotness]]></title>
-    <link href="http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
+    <link href="http://dashboarddude.com/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
     <updated>2013-08-16T14:49:00-04:00</updated>
-    <id>http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
+    <id>http://dashboarddude.com/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
     <content type="html"><![CDATA[<p><img class="right" src="/images/posts/dashing-hotness-widget/hot.png" width="250" height="250" title="Hot hot hot!" ></p>
 
 <p>The friendly <a href="https://twitter.com/davefp">David from Shopify</a> contacted me
@@ -27,6 +27,9 @@ I'm a big fan of its style and versatility.</p>
 
 <p>It didn't take me long to think of some widget ideas, so I thought I'd share
 what it took for me to enter the challenge with a basic idea.</p>
+
+<p>You can see the resulting widget <a href="https://gist.github.com/rowanu/6246149">in this
+gist</a>.</p>
 
 <!--more-->
 
@@ -172,7 +175,8 @@ to make it nice and readable.</p>
 <h2>Conclusion</h2>
 
 <p>Hopefully this will help you create your own widgets for Shopify's Dashing
-Dashboard.</p>
+Dashboard. You can see (and install) the widget yourself by checking out <a href="https://gist.github.com/rowanu/6246149">the
+gist</a>.</p>
 
 <p><strong>Kudos to the Shopify guys</strong> for making a cool piece of software, and making it
 so easy to extend!</p>

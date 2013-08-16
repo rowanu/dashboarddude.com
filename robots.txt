@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://rowanu.github.com/dashboarddude/sitemap.xml 
+Sitemap: http://dashboarddude.com/sitemap.xml 

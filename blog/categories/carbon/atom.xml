@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: carbon | Dashboard Dude]]></title>
-  <link href="http://rowanu.github.com/dashboarddude/blog/categories/carbon/atom.xml" rel="self"/>
-  <link href="http://rowanu.github.com/dashboarddude/"/>
-  <updated>2013-08-15T20:20:05-04:00</updated>
-  <id>http://rowanu.github.com/dashboarddude/</id>
+  <link href="http://dashboarddude.com/blog/categories/carbon/atom.xml" rel="self"/>
+  <link href="http://dashboarddude.com/"/>
+  <updated>2013-08-15T20:24:03-04:00</updated>
+  <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Installing Graphite with Ceres Awesomeness]]></title>
-    <link href="http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/"/>
+    <link href="http://dashboarddude.com/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/"/>
     <updated>2013-04-30T15:37:00-04:00</updated>
-    <id>http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness</id>
+    <id>http://dashboarddude.com/blog/2013/04/30/installing-graphite-with-ceres-awesomeness</id>
     <content type="html"><![CDATA[<p>The Dashboard Dude is still here, he's just busy with Real Life™
 unfortunately...</p>
 
