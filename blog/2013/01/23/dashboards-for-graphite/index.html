@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Dashboards for Graphite - Dashboard Dude</title>
+  <meta name="author" content="Rowan">
+
+  
+  <meta name="description" content="It&#8217;s no secret I like Graphite - it&#8217;s a great example of Open Source software
+which is just as good (actually, it&#8217;s even better) &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dashboard Dude" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37903037-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dashboard Dude</a></h1>
+  
+    <h2>You've got enough data. It's time to get a dashboard.</h2>
+  
+</hgroup>
+
+</header>
+  <div id="navigation">
+    <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rowanu.github.com/dashboarddude" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/services">Services</a></li>
+  <li><a href="/contact">Contact</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  </div>
+  <div id="body"  >
+    <div id="main">
+      <div id="content">
+        <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Dashboards for Graphite</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T08:17:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It&#8217;s no secret I like <a href="http://graphite.wikidot.com/">Graphite</a> - it&#8217;s a great example of Open Source software
+which is just as good (actually, it&#8217;s even better) than similar closed-source,
+enterprise-grade (and much more <strong>expensive</strong>) software.</p>
+
+<p><img class="right" src="/images/posts/dashboards-for-graphite/boring.png" width="400" height="300" title="A bit dull..." ></p>
+
+<p>While Graphite is fantastic, the front-end that comes with it leaves a little
+bit to be desired. You <em>can</em> use the built-in rendering and dashboard for viewing
+your system metrics, just like you <em>can</em> use Internet Explorer 6 to browse the
+Internet - it&#8217;ll work, but <a href="http://www.quickmeme.com/meme/3osf83/">you&#8217;re gonna have a bad time</a>.</p>
+
+<p>Thankfully, there are a lot of alternatives out there, but the <a href="http://graphite.readthedocs.org/en/latest/tools.html">Graphite Tools</a>
+page is a little out of date (with abandoned/incomplete projects), <strong>so here&#8217;s a
+list or dashboards I have or would consider using&#8230;</strong></p>
+
+<!--more-->
+
+
+<h2>Client-side Dashboards</h2>
+
+<p>These dashboards use the <a href="http://graphite.readthedocs.org/en/latest/render_api.html">Graphite Render API</a> to get data, and show them using
+some of the latest client-side Javascript libraries (like <a href="http://d3js.org/">D3.js</a>) to render
+graphs.</p>
+
+<p>These dashboards usually <strong>perform noticeably better than the built-in renderer</strong>,
+because it shifts the rendering work to your browser, rather than the server
+(which is already working to retrieve the metrics from disk, etc).</p>
+
+<p><a href="https://github.com/kenhub/giraffe"><img class="right" src="/images/posts/dashboards-for-graphite/giraffe.png" width="150" height="300" title="Giraffe" ></a></p>
+
+<h3><a href="https://github.com/kenhub/giraffe">Giraffe</a></h3>
+
+<p>A <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a>-based (which is built on d3.js) dashboard with a nice interface for
+toggling metrics and changing the time period being shown on the fly.</p>
+
+<p>While I haven&#8217;t used it personally, it looks good. My only concern is the
+performance, as even <a href="http://kenhub.github.com/giraffe/#dashboard=Demo&amp;timeFrame=1d">the small demo</a> is a bit slow.</p>
+
+<h3><a href="http://square.github.com/cubism/">Cubism.js</a></h3>
+
+<p><a href="http://square.github.com/cubism/"><img class="right" src="/images/posts/dashboards-for-graphite/cubism.js.png" width="400" height="300" title="Cubism.js" ></a>
+This is a great dashboard for fitting a large number of metrics on one screen.
+The horizon graph is suited to comparing many similar metrics, and the default
+colour scheme is really easy on the eyes, without loosing detail.</p>
+
+<p>While the current values are displayed, you&#8217;ll need to mouse-over the previous
+updates which may not suit some dashboards.</p>
+
+<p><a href="http://jondot.github.com/graphene/"><img class="right" src="/images/posts/dashboards-for-graphite/graphene.png" width="400" height="300" title="Graphene" ></a></p>
+
+<h3><a href="http://jondot.github.com/graphene/">Graphene</a></h3>
+
+<p>A good general-purpose replacement for your Graphite dashboards.
+As you can see on its demo page, it has widgets for gauges and counters, if
+you&#8217;re using <a href="https://github.com/etsy/statsd">StatsD&#8217;s</a> extra features.</p>
+
+<p>It has a nice auto-discovery feature, which can convert your existing
+Graphite dashboards to their Graphene equivalent quickly, but I find the
+dark/high contrast/high intensity colour scheme tough to look at for long
+periods of time (but that can be changed with some extra CSS styling).</p>
+
+<h3><a href="https://github.com/obfuscurity/tasseo">Tasseo</a></h3>
+
+<p><a href="https://github.com/obfuscurity/tasseo"><img class="right" src="/images/posts/dashboards-for-graphite/tasseo.png" width="400" height="300" title="Tasseo" ></a>
+Another Rickshaw-based front-end, it&#8217;s a very light-weight dashboard for viewing
+many different metrics (ie. they don&#8217;t have to be on the same scale) at once.</p>
+
+<p>It Can be easily configured to change colour when certain thresholds are breached,
+which makes it nice as a high-level dashboard. It&#8217;s not suited for long-term
+metric monitoring, as there are no y-axes drawn which can make working out
+historical values a bit hard.</p>
+
+<p>This is a dashboard by Jason Dixon, who also does the Descartes dashboard (see below).</p>
+
+<h2>Database-backed Dashboards</h2>
+
+<p>These databases have more features than the client-side dashboards, but require
+more set up and configuration to get running. Most reduce the load on your
+Graphite server by caching often-used data (eg. by using <a href="http://redis.io/">Redis</a>).</p>
+
+<p><a href="https://github.com/paperlesspost/graphiti"><img class="right" src="/images/posts/dashboards-for-graphite/graphiti.jpeg" width="400" height="300" title="Graphiti" ></a></p>
+
+<h3><a href="https://github.com/paperlesspost/graphiti">Graphiti</a></h3>
+
+<p>A Redis-backed dashboard replacement which uses JSON to configure graphs. It
+uses Redis as a metric and settings cache, and it has the ability to store
+snapshots of your graphs on Amazon&#8217;s S3. One thing to note is that it
+deliberately doesn&#8217;t do authentication - it makes the (not unreasonable)
+assumption that your Graphite data and dashboards are not on a public network.</p>
+
+<h3><a href="https://github.com/obfuscurity/descartes">Descartes</a></h3>
+
+<p>Definitely the most comprehensive replacement for Graphite&#8217;s built-in dashboard
+so far, which isn&#8217;t really surprising given it&#8217;s by Jason Dixon (see below).
+It depends on Redis and PostreSQL, which also puts it at the top of the
+requirements list.</p>
+
+<p><a href="https://github.com/obfuscurity/descartes"><img class="right" src="/images/posts/dashboards-for-graphite/descartes.png" width="400" height="200" title="Descartes" ></a>
+It has the ability to set templates for graphs, and uses sparklines to give you
+a high-level overview of your metrics and help you decide what you want to
+include in your dashboard, which is always useful.</p>
+
+<p>Authentication of users can be done with Goolge OpenID or Github, and comes
+with great instructions on how to deploy to Heroku, which will help you get up
+and running quickly.</p>
+
+<p>While I haven&#8217;t had a chance to use Descartes myself, I would trust anything
+that <a href="https://github.com/obfuscurity">Jason Dixon</a> puts out - he is one of the <a href="https://github.com/graphite-project?tab=members">Graphite Project</a> maintainers
+and did the Tasseo dashboard (see above), so you know he knows his stuff.
+His blog is full of useful <a href="http://obfuscurity.com/Tags/Graphite">Graphite tips</a>.</p>
+
+<h2>Other Dashboards</h2>
+
+<p>While not specifically Graphite dashboards, the following get an honourable
+mention:</p>
+
+<h3><a href="https://github.com/ripienaar/gdash">GDash</a></h3>
+
+<p><a href="https://github.com/ripienaar/gdash"><img class="right" src="/images/posts/dashboards-for-graphite/gdash.png" width="200" height="100" title="GDash" ></a>
+This dashboard is not client-side (it uses Graphite&#8217;s internal renderer for
+images) or database backed, so it&#8217;s more of a &#8220;skin&#8221; on the default dashboard.
+It lets you configure your dashboards using YAML, and is built on the Twitter
+Bootstrap web-framework.</p>
+
+<h3><a href="https://github.com/Dieterbe/graph-explorer">Graph Explorer</a></h3>
+
+<p><a href="https://github.com/Dieterbe/graph-explorer"><img class="right" src="/images/posts/dashboards-for-graphite/explorer.png" width="300" height="150" title="Graph Explorer" ></a>
+While this isn&#8217;t a dashboard (like the others in this list), it&#8217;s a new take on
+metric exploration for Graphite. Made to be very interactive, it can definitely
+help you decide what metrics to include in your dashboard. The nice thing is
+that he graphs created are interactive, which is a big improvement over the
+usual metric explorer built-in to Graphite.</p>
+
+<h3><a href="http://shopify.github.com/dashing/">Dashing</a></h3>
+
+<p><a href="http://shopify.github.com/dashing/"><img class="left" src="/images/posts/dashboards-for-graphite/dashing.png" width="200" height="200" title="Dashing" ></a>
+A general-purpose dashboard by the boffins at <a href="http://www.shopify.com/">Shopify</a>, Dashing can accept data
+from many different sources, and display many different types of data through
+various widgets. This includes being able to display Graphite data through
+direct calls to the Render URL API (you&#8217;ll have to roll them yourself), and
+display them using their Rickshaw graph widget.</p>
+
+<p>I&#8217;m a big fan or Dashing for non-technical dashboards because it can accept so
+many types/sources of data, and looks great out of the box. They also have a
+gauge widget which works really nicely with the StatsD&#8217;s gauge metrics.
+The have a <a href="http://dashingdemo.herokuapp.com/sampletv">great demo of the various widgets in action</a>.</p>
+
+<h2>Need Help?</h2>
+
+<p>There you have it! Let me your personal experiences and recommendations with
+these dashboards, or if I missed any you think are worthwhile in the comments below.</p>
+
+<p>If you need any help setting up any of these dashboards, or Graphite itself,
+check out <a href="/services">my dashboard consulting services</a> and <a href="/contact">get in touch with me</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Rowan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T08:17:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cubism-js/'>Cubism.js</a>, <a class='category' href='/blog/categories/dashing/'>Dashing</a>, <a class='category' href='/blog/categories/descartes/'>Descartes</a>, <a class='category' href='/blog/categories/gdash/'>GDash</a>, <a class='category' href='/blog/categories/giraffe/'>Giraffe</a>, <a class='category' href='/blog/categories/graphexplorer/'>GraphExplorer</a>, <a class='category' href='/blog/categories/graphene/'>Graphene</a>, <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/graphiti/'>Graphiti</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/tasseo/'>Tasseo</a>, <a class='category' href='/blog/categories/d3-js/'>d3.js</a>, <a class='category' href='/blog/categories/dashboards/'>dashboards</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/" data-via="" data-counturl="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/" title="Next Post: Installing Graphite with Ceres Awesomeness">Installing Graphite with Ceres Awesomeness &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/">Dashing Dashboard Widget Challenge: The Hotness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/">Installing Graphite with Ceres Awesomeness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/23/dashboards-for-graphite/">Dashboards for Graphite</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+      </div>
+    </div>
+    <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Rowan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+</p>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'dashboarddude';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/';
+        var disqus_url = 'http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<!--
+hn like button plugin for jekyll/octopress
+Author: dryman (Felix Ren-Chyan Chern)
+
+Inpired from http://hnlike.com/ written by sbashyal
+
+(The MIT License)
+
+Copyright © 2012-2013 Felix Ren-Chyan Chern
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the ‘Software’), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+  <script type="text/javascript">
+    (function(){
+      var hn_like = document.createElement('iframe');
+      hn_like.frameborder="no";
+      hn_like.scrolling="no";
+      hn_like.height="28px";
+      hn_like.width="115px";
+      hn_like.src = "http://hnlike.com/upvote.php?link="
+                    + encodeURIComponent(document.location)
+                    + "&title="
+                    + encodeURIComponent("Dashboards for Graphite");
+      hn_like.innerHTML="iframes not supported by your browser";
+      var twitter = document.getElementsByClassName("twitter-share-button")[0];
+
+      twitter.parentNode.insertBefore(
+        hn_like,
+        twitter
+      );
+    })();
+  </script>
+
+<!-- end of hn like button -->
+
+
+
+
+
+  </div>
+</body>
+</html>

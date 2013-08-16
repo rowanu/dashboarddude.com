@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Dashboard Dude]]></title>
+  <link href="http://rowanu.github.com/dashboarddude/atom.xml" rel="self"/>
+  <link href="http://rowanu.github.com/dashboarddude/"/>
+  <updated>2013-08-15T20:20:05-04:00</updated>
+  <id>http://rowanu.github.com/dashboarddude/</id>
+  <author>
+    <name><![CDATA[Rowan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dashing Dashboard Widget Challenge: The Hotness]]></title>
+    <link href="http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
+    <updated>2013-08-16T14:49:00-04:00</updated>
+    <id>http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/hot.png" width="250" height="250" title="Hot hot hot!" ></p>
+
+<p>The friendly <a href="https://twitter.com/davefp">David from Shopify</a> contacted me
+recently about the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a> that they&#8217;re holding. I&#8217;ve
+written about <a href="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite">Dashing before</a>, and
+I&#8217;m a big fan of its style and versatility.</p>
+
+<p>It didn&#8217;t take me long to think of some widget ideas, so I thought I&#8217;d share
+what it took for me to enter the challenge with a basic idea.</p>
+
+<!--more-->
+
+
+<h2>My Idea</h2>
+
+<p>The idea I had was for a widget that changed colour, depending on the value it
+is displaying - kind of like the Meter and Number Widgets that comes with
+Dashing, but <strong>hotter</strong>.</p>
+
+<p>My plan is for this to be a big, bold, colourful way of
+drawing focus to metrics which need immediate attention (because something&#8217;s
+about to explode, etc).</p>
+
+<p>It&#8217;s worth noting that the Number widget actually has (undocumented?) &#8216;warning&#8217;
+and &#8216;danger&#8217; values that can be set (which cause the widget to pulse), but these
+require a status to be set on the data sent to the widget (from the job). I
+wanted something that would &#8216;just work&#8217; with numerical data, as it&#8217;s a common
+use-case I see.</p>
+
+<h2>The Dashing Dashboard</h2>
+
+<p>The <a href="http://shopify.github.io/dashing/">Dashing page</a> has the basic information
+you need to create your own widget:</p>
+
+<blockquote><p>Anatomy of a widget</p>
+
+<p>an HTML file used for layout and bindings</p>
+
+<p>a SCSS file for styles</p>
+
+<p>a coffeescript file which allows you to handle incoming data &amp; functionality</p></blockquote>
+
+<p>That combined with the <a href="https://github.com/Shopify/dashing/tree/master/templates/project/widgets">existing examples</a>
+and the <a href="https://github.com/Shopify/dashing/wiki/Additional-Widgets">3rd party widgets</a> as
+reference points means that there are plenty examples out there to learn from.</p>
+
+<h2>My Widget</h2>
+
+<h3>HTML Template</h3>
+
+<p>The template I decided was appropriate was super-simple - this widget is really
+only trying to convey a single value, so I based it off the &#8216;vanilla&#8217; Number
+Widget.</p>
+
+<pre><code>&lt;h1 class="title" data-bind="title"&gt;&lt;/h1&gt;
+
+&lt;h2 class="value" data-bind="value | shortenedNumber | prepend prefix | append suffix"&gt;&lt;/h2&gt;
+
+&lt;p class="updated-at" data-bind="updatedAtMessage"&gt;&lt;/p&gt;
+</code></pre>
+
+<p>This just shows the title (if present), value (in a shortened format, with
+prefix and suffixes - if present), and finally a small &#8216;updated at&#8217; message (as
+most widgets in Dashing do).</p>
+
+<h2>Styling with SASS</h2>
+
+<p><img class="left" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/cool.png" width="250" height="250" title="Everything's cool" ></p>
+
+<p>Dashing comes with <a href="http://sass-lang.com/">SASS</a> support, which is another nice
+touch by the developers.</p>
+
+<p>I had originally hoped to auto-generate the colour spectrum for the widget
+using some of SASS&#8217; <a href="http://nex-3.com/posts/89-powerful-color-manipulation-with-sass">advanced colour methods</a>, but
+in the end I decided to keep it simple for this first version, and use a
+palette created by <a href="http://www.colourlovers.com/lover/nekoyo">Nekyo</a> called
+<a href="http://www.colourlovers.com/palette/56122/Sweet_Lolly">Sweet Lolly</a>. I found
+this through the <a href="http://www.colourlovers.com/">COLOURlovers</a> site, and grabbed
+it because I really wanted something that went from green to red, with yellow
+in the middle.</p>
+
+<h3>CSS3 Transitions</h3>
+
+<p>After reading this <a href="http://css3.bradshawenterprises.com/transitions/">great description of CSS3 transitions</a>, I created the
+required SCSS for my widget. In order to make the code a little more readable,
+I included a
+<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins">mixin</a> to
+handle all the browser-specific directives:</p>
+
+<pre><code>@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+</code></pre>
+
+<p>Which meant that when I wanted to transition the background-color for my
+widget, all I need to include in the SCSS is:</p>
+
+<pre><code>@include transition(background-color, 1s, linear);
+</code></pre>
+
+<p>This might be a bit of overkill for the one usage, originally considered
+some other transitions (and may still include them in a future version), so I
+&#8216;did it right&#8217; the first time.</p>
+
+<h3>CoffeeScript Functionality</h3>
+
+<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/neutral.png" width="250" height="250"></p>
+
+<p>The widget functionality resides in a CoffeeScript/JavaScript file, which will
+be included by Dashing at runtime. All of the included widgets are written in
+CoffeeScript, so I wanted to keep consistent with that. I&#8217;m also a big fan of
+CoffeeScript - I find it a bit more maintainable than JavaScript, especially for
+small files like this.</p>
+
+<h4>The onData Event</h4>
+
+<p>In my basic widget, all of the magic happens in the <code>onData</code> event, which all widgets
+receive when (surprise surprise!) data is sent to them by the scheduled jobs.</p>
+
+<p>All I needed to do was change (toggle) the background colour (using CSS) of the
+widget to represent its place between two user supplied values: &#8216;warm&#8217; and
+&#8216;cool&#8217;. Anything outside those values will be shown as &#8216;hot&#8217; and &#8216;cold&#8217;
+respectively (ie. the max and min colour values). Anything inside those values
+will use an interpolated value from three possible choices (cool, neutral, and
+warm).</p>
+
+<p>There&#8217;s also a <code>ready</code> event, which fires when the widget is first loaded (ie.
+when the page is loaded). This could be useful to configure the widget in a
+certain way, depending on user settings, etc.</p>
+
+<p>Here&#8217;s the <code>onData</code> listener that makes the widget work (in CoffeeScript):</p>
+
+<pre><code>onData: (data) -&gt;
+  node = $(@node)
+  value = parseInt data.value
+  cool = parseInt node.data "cool"
+  warm = parseInt node.data "warm"
+  level = switch
+    when value &lt;= cool then 0
+    when value &gt;= warm then 4
+    else 
+      bucketSize = (warm - cool) / 3 # Total # of colours in middle
+      Math.ceil (value - cool) / bucketSize
+</code></pre>
+
+<p>It could&#8217;ve easily been shortened to a few lines, but I like taking a few extra
+to make it nice and readable.</p>
+
+<h2>Conclusion</h2>
+
+<p>Hopefully this will help you create your own widgets for Shopify&#8217;s Dashing
+Dashboard.</p>
+
+<p><strong>Kudos to the Shopify guys</strong> for making a cool piece of software, and making it
+so easy to extend!</p>
+
+<p>If you&#8217;ve got a good idea for a widget (and it&#8217;s not after September 13th,
+2013), you should enter the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a>!</p>
+
+<p><img class="center" src="http://rowanu.github.com/dashboarddude/images/posts/dashing-hotness-widget/cold.png" width="250" height="250" title="Green is good" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Graphite with Ceres Awesomeness]]></title>
+    <link href="http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/"/>
+    <updated>2013-04-30T15:37:00-04:00</updated>
+    <id>http://rowanu.github.com/dashboarddude/blog/2013/04/30/installing-graphite-with-ceres-awesomeness</id>
+    <content type="html"><![CDATA[<p>The Dashboard Dude is still here, he&#8217;s just busy with Real Life™
+unfortunately&#8230;</p>
+
+<p>While I work on my next post, here are links to some others I did at my last
+workplace about getting started with Graphite, including using the new back-end
+replacement for Whisper - Ceres.</p>
+
+<ul>
+<li><a href="http://blog.sweetiq.com/2013/01/getting-started-with-graphite/">Getting started with Graphite</a></li>
+<li><a href="http://blog.sweetiq.com/2013/01/using-ceres-as-the-back-end-database-to-graphite/">Setting up Ceres as the back end database to Graphite</a></li>
+<li><a href="http://blog.sweetiq.com/2013/01/carbon-daemon-writer-setup-in-megacarbon/">Setting up the new carbon-daemon for writing metrics in Graphite</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dashboards for Graphite]]></title>
+    <link href="http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite/"/>
+    <updated>2013-01-23T08:17:00-05:00</updated>
+    <id>http://rowanu.github.com/dashboarddude/blog/2013/01/23/dashboards-for-graphite</id>
+    <content type="html"><![CDATA[<p>It&#8217;s no secret I like <a href="http://graphite.wikidot.com/">Graphite</a> - it&#8217;s a great example of Open Source software
+which is just as good (actually, it&#8217;s even better) than similar closed-source,
+enterprise-grade (and much more <strong>expensive</strong>) software.</p>
+
+<p><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/boring.png" width="400" height="300" title="A bit dull..." ></p>
+
+<p>While Graphite is fantastic, the front-end that comes with it leaves a little
+bit to be desired. You <em>can</em> use the built-in rendering and dashboard for viewing
+your system metrics, just like you <em>can</em> use Internet Explorer 6 to browse the
+Internet - it&#8217;ll work, but <a href="http://www.quickmeme.com/meme/3osf83/">you&#8217;re gonna have a bad time</a>.</p>
+
+<p>Thankfully, there are a lot of alternatives out there, but the <a href="http://graphite.readthedocs.org/en/latest/tools.html">Graphite Tools</a>
+page is a little out of date (with abandoned/incomplete projects), <strong>so here&#8217;s a
+list or dashboards I have or would consider using&#8230;</strong></p>
+
+<!--more-->
+
+
+<h2>Client-side Dashboards</h2>
+
+<p>These dashboards use the <a href="http://graphite.readthedocs.org/en/latest/render_api.html">Graphite Render API</a> to get data, and show them using
+some of the latest client-side Javascript libraries (like <a href="http://d3js.org/">D3.js</a>) to render
+graphs.</p>
+
+<p>These dashboards usually <strong>perform noticeably better than the built-in renderer</strong>,
+because it shifts the rendering work to your browser, rather than the server
+(which is already working to retrieve the metrics from disk, etc).</p>
+
+<p><a href="https://github.com/kenhub/giraffe"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/giraffe.png" width="150" height="300" title="Giraffe" ></a></p>
+
+<h3><a href="https://github.com/kenhub/giraffe">Giraffe</a></h3>
+
+<p>A <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a>-based (which is built on d3.js) dashboard with a nice interface for
+toggling metrics and changing the time period being shown on the fly.</p>
+
+<p>While I haven&#8217;t used it personally, it looks good. My only concern is the
+performance, as even <a href="http://kenhub.github.com/giraffe/#dashboard=Demo&amp;timeFrame=1d">the small demo</a> is a bit slow.</p>
+
+<h3><a href="http://square.github.com/cubism/">Cubism.js</a></h3>
+
+<p><a href="http://square.github.com/cubism/"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/cubism.js.png" width="400" height="300" title="Cubism.js" ></a>
+This is a great dashboard for fitting a large number of metrics on one screen.
+The horizon graph is suited to comparing many similar metrics, and the default
+colour scheme is really easy on the eyes, without loosing detail.</p>
+
+<p>While the current values are displayed, you&#8217;ll need to mouse-over the previous
+updates which may not suit some dashboards.</p>
+
+<p><a href="http://jondot.github.com/graphene/"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/graphene.png" width="400" height="300" title="Graphene" ></a></p>
+
+<h3><a href="http://jondot.github.com/graphene/">Graphene</a></h3>
+
+<p>A good general-purpose replacement for your Graphite dashboards.
+As you can see on its demo page, it has widgets for gauges and counters, if
+you&#8217;re using <a href="https://github.com/etsy/statsd">StatsD&#8217;s</a> extra features.</p>
+
+<p>It has a nice auto-discovery feature, which can convert your existing
+Graphite dashboards to their Graphene equivalent quickly, but I find the
+dark/high contrast/high intensity colour scheme tough to look at for long
+periods of time (but that can be changed with some extra CSS styling).</p>
+
+<h3><a href="https://github.com/obfuscurity/tasseo">Tasseo</a></h3>
+
+<p><a href="https://github.com/obfuscurity/tasseo"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/tasseo.png" width="400" height="300" title="Tasseo" ></a>
+Another Rickshaw-based front-end, it&#8217;s a very light-weight dashboard for viewing
+many different metrics (ie. they don&#8217;t have to be on the same scale) at once.</p>
+
+<p>It Can be easily configured to change colour when certain thresholds are breached,
+which makes it nice as a high-level dashboard. It&#8217;s not suited for long-term
+metric monitoring, as there are no y-axes drawn which can make working out
+historical values a bit hard.</p>
+
+<p>This is a dashboard by Jason Dixon, who also does the Descartes dashboard (see below).</p>
+
+<h2>Database-backed Dashboards</h2>
+
+<p>These databases have more features than the client-side dashboards, but require
+more set up and configuration to get running. Most reduce the load on your
+Graphite server by caching often-used data (eg. by using <a href="http://redis.io/">Redis</a>).</p>
+
+<p><a href="https://github.com/paperlesspost/graphiti"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/graphiti.jpeg" width="400" height="300" title="Graphiti" ></a></p>
+
+<h3><a href="https://github.com/paperlesspost/graphiti">Graphiti</a></h3>
+
+<p>A Redis-backed dashboard replacement which uses JSON to configure graphs. It
+uses Redis as a metric and settings cache, and it has the ability to store
+snapshots of your graphs on Amazon&#8217;s S3. One thing to note is that it
+deliberately doesn&#8217;t do authentication - it makes the (not unreasonable)
+assumption that your Graphite data and dashboards are not on a public network.</p>
+
+<h3><a href="https://github.com/obfuscurity/descartes">Descartes</a></h3>
+
+<p>Definitely the most comprehensive replacement for Graphite&#8217;s built-in dashboard
+so far, which isn&#8217;t really surprising given it&#8217;s by Jason Dixon (see below).
+It depends on Redis and PostreSQL, which also puts it at the top of the
+requirements list.</p>
+
+<p><a href="https://github.com/obfuscurity/descartes"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/descartes.png" width="400" height="200" title="Descartes" ></a>
+It has the ability to set templates for graphs, and uses sparklines to give you
+a high-level overview of your metrics and help you decide what you want to
+include in your dashboard, which is always useful.</p>
+
+<p>Authentication of users can be done with Goolge OpenID or Github, and comes
+with great instructions on how to deploy to Heroku, which will help you get up
+and running quickly.</p>
+
+<p>While I haven&#8217;t had a chance to use Descartes myself, I would trust anything
+that <a href="https://github.com/obfuscurity">Jason Dixon</a> puts out - he is one of the <a href="https://github.com/graphite-project?tab=members">Graphite Project</a> maintainers
+and did the Tasseo dashboard (see above), so you know he knows his stuff.
+His blog is full of useful <a href="http://obfuscurity.com/Tags/Graphite">Graphite tips</a>.</p>
+
+<h2>Other Dashboards</h2>
+
+<p>While not specifically Graphite dashboards, the following get an honourable
+mention:</p>
+
+<h3><a href="https://github.com/ripienaar/gdash">GDash</a></h3>
+
+<p><a href="https://github.com/ripienaar/gdash"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/gdash.png" width="200" height="100" title="GDash" ></a>
+This dashboard is not client-side (it uses Graphite&#8217;s internal renderer for
+images) or database backed, so it&#8217;s more of a &#8220;skin&#8221; on the default dashboard.
+It lets you configure your dashboards using YAML, and is built on the Twitter
+Bootstrap web-framework.</p>
+
+<h3><a href="https://github.com/Dieterbe/graph-explorer">Graph Explorer</a></h3>
+
+<p><a href="https://github.com/Dieterbe/graph-explorer"><img class="right" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/explorer.png" width="300" height="150" title="Graph Explorer" ></a>
+While this isn&#8217;t a dashboard (like the others in this list), it&#8217;s a new take on
+metric exploration for Graphite. Made to be very interactive, it can definitely
+help you decide what metrics to include in your dashboard. The nice thing is
+that he graphs created are interactive, which is a big improvement over the
+usual metric explorer built-in to Graphite.</p>
+
+<h3><a href="http://shopify.github.com/dashing/">Dashing</a></h3>
+
+<p><a href="http://shopify.github.com/dashing/"><img class="left" src="http://rowanu.github.com/dashboarddude/images/posts/dashboards-for-graphite/dashing.png" width="200" height="200" title="Dashing" ></a>
+A general-purpose dashboard by the boffins at <a href="http://www.shopify.com/">Shopify</a>, Dashing can accept data
+from many different sources, and display many different types of data through
+various widgets. This includes being able to display Graphite data through
+direct calls to the Render URL API (you&#8217;ll have to roll them yourself), and
+display them using their Rickshaw graph widget.</p>
+
+<p>I&#8217;m a big fan or Dashing for non-technical dashboards because it can accept so
+many types/sources of data, and looks great out of the box. They also have a
+gauge widget which works really nicely with the StatsD&#8217;s gauge metrics.
+The have a <a href="http://dashingdemo.herokuapp.com/sampletv">great demo of the various widgets in action</a>.</p>
+
+<h2>Need Help?</h2>
+
+<p>There you have it! Let me your personal experiences and recommendations with
+these dashboards, or if I missed any you think are worthwhile in the comments below.</p>
+
+<p>If you need any help setting up any of these dashboards, or Graphite itself,
+check out <a href="http://rowanu.github.com/dashboarddude/services">my dashboard consulting services</a> and <a href="http://rowanu.github.com/dashboarddude/contact">get in touch with me</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

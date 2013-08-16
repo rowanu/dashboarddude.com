@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: widget | Dashboard Dude]]></title>
+  <link href="http://rowanu.github.com/dashboarddude/blog/categories/widget/atom.xml" rel="self"/>
+  <link href="http://rowanu.github.com/dashboarddude/"/>
+  <updated>2013-08-15T20:20:05-04:00</updated>
+  <id>http://rowanu.github.com/dashboarddude/</id>
+  <author>
+    <name><![CDATA[Rowan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dashing Dashboard Widget Challenge: The Hotness]]></title>
+    <link href="http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/"/>
+    <updated>2013-08-16T14:49:00-04:00</updated>
+    <id>http://rowanu.github.com/dashboarddude/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness</id>
+    <content type="html"><![CDATA[<p><img class="right" src="/images/posts/dashing-hotness-widget/hot.png" width="250" height="250" title="Hot hot hot!" ></p>
+
+<p>The friendly <a href="https://twitter.com/davefp">David from Shopify</a> contacted me
+recently about the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a> that they're holding. I've
+written about <a href="/blog/2013/01/23/dashboards-for-graphite">Dashing before</a>, and
+I'm a big fan of its style and versatility.</p>
+
+<p>It didn't take me long to think of some widget ideas, so I thought I'd share
+what it took for me to enter the challenge with a basic idea.</p>
+
+<!--more-->
+
+
+<h2>My Idea</h2>
+
+<p>The idea I had was for a widget that changed colour, depending on the value it
+is displaying - kind of like the Meter and Number Widgets that comes with
+Dashing, but <strong>hotter</strong>.</p>
+
+<p>My plan is for this to be a big, bold, colourful way of
+drawing focus to metrics which need immediate attention (because something's
+about to explode, etc).</p>
+
+<p>It's worth noting that the Number widget actually has (undocumented?) 'warning'
+and 'danger' values that can be set (which cause the widget to pulse), but these
+require a status to be set on the data sent to the widget (from the job). I
+wanted something that would 'just work' with numerical data, as it's a common
+use-case I see.</p>
+
+<h2>The Dashing Dashboard</h2>
+
+<p>The <a href="http://shopify.github.io/dashing/">Dashing page</a> has the basic information
+you need to create your own widget:</p>
+
+<blockquote><p>Anatomy of a widget</p>
+
+<p>an HTML file used for layout and bindings</p>
+
+<p>a SCSS file for styles</p>
+
+<p>a coffeescript file which allows you to handle incoming data &amp; functionality</p></blockquote>
+
+<p>That combined with the <a href="https://github.com/Shopify/dashing/tree/master/templates/project/widgets">existing examples</a>
+and the <a href="https://github.com/Shopify/dashing/wiki/Additional-Widgets">3rd party widgets</a> as
+reference points means that there are plenty examples out there to learn from.</p>
+
+<h2>My Widget</h2>
+
+<h3>HTML Template</h3>
+
+<p>The template I decided was appropriate was super-simple - this widget is really
+only trying to convey a single value, so I based it off the 'vanilla' Number
+Widget.</p>
+
+<pre><code>&lt;h1 class="title" data-bind="title"&gt;&lt;/h1&gt;
+
+&lt;h2 class="value" data-bind="value | shortenedNumber | prepend prefix | append suffix"&gt;&lt;/h2&gt;
+
+&lt;p class="updated-at" data-bind="updatedAtMessage"&gt;&lt;/p&gt;
+</code></pre>
+
+<p>This just shows the title (if present), value (in a shortened format, with
+prefix and suffixes - if present), and finally a small 'updated at' message (as
+most widgets in Dashing do).</p>
+
+<h2>Styling with SASS</h2>
+
+<p><img class="left" src="/images/posts/dashing-hotness-widget/cool.png" width="250" height="250" title="Everything's cool" ></p>
+
+<p>Dashing comes with <a href="http://sass-lang.com/">SASS</a> support, which is another nice
+touch by the developers.</p>
+
+<p>I had originally hoped to auto-generate the colour spectrum for the widget
+using some of SASS' <a href="http://nex-3.com/posts/89-powerful-color-manipulation-with-sass">advanced colour methods</a>, but
+in the end I decided to keep it simple for this first version, and use a
+palette created by <a href="http://www.colourlovers.com/lover/nekoyo">Nekyo</a> called
+<a href="http://www.colourlovers.com/palette/56122/Sweet_Lolly">Sweet Lolly</a>. I found
+this through the <a href="http://www.colourlovers.com/">COLOURlovers</a> site, and grabbed
+it because I really wanted something that went from green to red, with yellow
+in the middle.</p>
+
+<h3>CSS3 Transitions</h3>
+
+<p>After reading this <a href="http://css3.bradshawenterprises.com/transitions/">great description of CSS3 transitions</a>, I created the
+required SCSS for my widget. In order to make the code a little more readable,
+I included a
+<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins">mixin</a> to
+handle all the browser-specific directives:</p>
+
+<pre><code>@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+</code></pre>
+
+<p>Which meant that when I wanted to transition the background-color for my
+widget, all I need to include in the SCSS is:</p>
+
+<pre><code>@include transition(background-color, 1s, linear);
+</code></pre>
+
+<p>This might be a bit of overkill for the one usage, originally considered
+some other transitions (and may still include them in a future version), so I
+'did it right' the first time.</p>
+
+<h3>CoffeeScript Functionality</h3>
+
+<p><img class="right" src="/images/posts/dashing-hotness-widget/neutral.png" width="250" height="250"></p>
+
+<p>The widget functionality resides in a CoffeeScript/JavaScript file, which will
+be included by Dashing at runtime. All of the included widgets are written in
+CoffeeScript, so I wanted to keep consistent with that. I'm also a big fan of
+CoffeeScript - I find it a bit more maintainable than JavaScript, especially for
+small files like this.</p>
+
+<h4>The onData Event</h4>
+
+<p>In my basic widget, all of the magic happens in the <code>onData</code> event, which all widgets
+receive when (surprise surprise!) data is sent to them by the scheduled jobs.</p>
+
+<p>All I needed to do was change (toggle) the background colour (using CSS) of the
+widget to represent its place between two user supplied values: 'warm' and
+'cool'. Anything outside those values will be shown as 'hot' and 'cold'
+respectively (ie. the max and min colour values). Anything inside those values
+will use an interpolated value from three possible choices (cool, neutral, and
+warm).</p>
+
+<p>There's also a <code>ready</code> event, which fires when the widget is first loaded (ie.
+when the page is loaded). This could be useful to configure the widget in a
+certain way, depending on user settings, etc.</p>
+
+<p>Here's the <code>onData</code> listener that makes the widget work (in CoffeeScript):</p>
+
+<pre><code>onData: (data) -&gt;
+  node = $(@node)
+  value = parseInt data.value
+  cool = parseInt node.data "cool"
+  warm = parseInt node.data "warm"
+  level = switch
+    when value &lt;= cool then 0
+    when value &gt;= warm then 4
+    else 
+      bucketSize = (warm - cool) / 3 # Total # of colours in middle
+      Math.ceil (value - cool) / bucketSize
+</code></pre>
+
+<p>It could've easily been shortened to a few lines, but I like taking a few extra
+to make it nice and readable.</p>
+
+<h2>Conclusion</h2>
+
+<p>Hopefully this will help you create your own widgets for Shopify's Dashing
+Dashboard.</p>
+
+<p><strong>Kudos to the Shopify guys</strong> for making a cool piece of software, and making it
+so easy to extend!</p>
+
+<p>If you've got a good idea for a widget (and it's not after September 13th,
+2013), you should enter the <a href="http://dashing.challengepost.com/">Shopify Widget Challenge</a>!</p>
+
+<p><img class="center" src="/images/posts/dashing-hotness-widget/cold.png" width="250" height="250" title="Green is good" ></p>
+]]></content>
+  </entry>
+  
+</feed>
