@@ -16,6 +16,9 @@ I'm a big fan of its style and versatility.
 It didn't take me long to think of some widget ideas, so I thought I'd share
 what it took for me to enter the challenge with a basic idea.
 
+You can see the resulting widget [in this
+gist](https://gist.github.com/rowanu/6246149).
+
 <!--more-->
 
 ## My Idea
@@ -155,7 +158,8 @@ to make it nice and readable.
 ## Conclusion
 
 Hopefully this will help you create your own widgets for Shopify's Dashing
-Dashboard.
+Dashboard. You can see (and install) the widget yourself by checking out [the
+gist](https://gist.github.com/rowanu/6246149).
 
 __Kudos to the Shopify guys__ for making a cool piece of software, and making it
 so easy to extend!
