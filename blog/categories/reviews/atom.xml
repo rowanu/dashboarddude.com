@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: graphite | Dashboard Dude]]></title>
-  <link href="http://dashboarddude.com/blog/categories/graphite/atom.xml" rel="self"/>
+  <title><![CDATA[Category: reviews | Dashboard Dude]]></title>
+  <link href="http://dashboarddude.com/blog/categories/reviews/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
   <updated>2013-09-02T19:59:05-04:00</updated>
   <id>http://dashboarddude.com/</id>

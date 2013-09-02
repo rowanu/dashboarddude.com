@@ -9,9 +9,8 @@
   <meta name="author" content="Rowan">
 
   
-  <meta name="description" content="The friendly David from Shopify contacted me
-recently about the Shopify Widget Challenge that they&#8217;re holding. I&#8217;ve
-written about &hellip;">
+  <meta name="description" content="What is Dusk? Dusk is a Cubism.js-based front-end for Graphite data. It&#8217;s another great
+pieces of software by the prolific Obfuscurity. TBC &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,96 @@ written about &hellip;">
       <div id="content">
         <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/25/dashboard-review-dusk/">Dashboard Reviews: Dusk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-25T14:44:00-04:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>What is Dusk?</h2>
+
+<p>Dusk is a Cubism.js-based front-end for Graphite data.  It&#8217;s another great
+pieces of software by the prolific <a href="http://obfuscurity.com/">Obfuscurity</a>.</p>
+
+<p>TBC</p>
+
+<h3>Cubism.js</h3>
+
+<p>If you check out <a href="http://square.github.io/cubism/">Cubisim.js&#8217;</a> project page,
+you can see that it&#8217;s the driving force behind Dusk.</p>
+
+<p>TBC</p>
+
+<h2>Usage</h2>
+
+<p>Unfortunately, there&#8217;s no one dashboard <strong>to rule them all</strong> - different
+dashboards are good (and bad) for different things. Here&#8217;s what I think you
+should use Dusk for:</p>
+
+<h3>Good For</h3>
+
+<p>You should consider Dusk if you have a lot of similar metrics that you need to
+compare. If your metrics have some kind of relationship between them (and not
+just that they&#8217;re the same kind of metric eg. CPU) then that&#8217;s even better. An
+example of similar metrics with a relationship might be the CPU of nodes in a
+cluster - Dusk is ideal for seeing when events start to impact multiple
+instances of your metrics (ie. each node).</p>
+
+<h3>Bad For</h3>
+
+<p>Metrics which don&#8217;t have the same scale. While you could use Dusk to monitor
+different metrics on the same dashboard, you would really want to make sure they
+have a similar scale (eg. 0-100). While Cubism.js uses <a href="http://vis.berkeley.edu/papers/horizon/">horizon
+charts</a> to efficiently display metrics,
+having to adjust (mentally) for different scales across a large number of
+metrics is just not a good idea.</p>
+
+<h3>Configuration</h3>
+
+<p>Obfuscurity states in the <a href="http://obfuscurity.com/2013/06/Dusk-Yet-Another-Graphite-Dashboard">post on
+Dusk</a> that
+he wanted to avoid any external requirements, and as such configuration is
+simple and all done through URL parameters.</p>
+
+<p>TBC</p>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="https://github.com/obfuscurity/dusk">Dusk on Github</a></li>
+<li><a href="http://obfuscurity.com/2013/06/Dusk-Yet-Another-Graphite-Dashboard">Obfuscurity&#8217;s post</a></li>
+<li><a href="https://github.com/square/cubism">Cubism on Github</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -263,6 +352,10 @@ list or dashboards I have or would consider using&#8230;</strong></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/25/dashboard-review-dusk/">Dashboard Reviews: Dusk</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/">Dashing Dashboard Widget Challenge: The Hotness</a>
       </li>
     
@@ -378,7 +471,20 @@ SOFTWARE.
 <!-- end of hn like button -->
 
 
-
+<script id="_webengage_script_tag" type="text/javascript">
+  var _weq = _weq || {};
+  _weq['webengage.licenseCode'] = '~15ba203b6';
+  _weq['webengage.widgetVersion'] = "4.0";
+  
+  (function(d){
+    var _we = d.createElement('script');
+    _we.type = 'text/javascript';
+    _we.async = true;
+    _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    var _sNode = d.getElementById('_webengage_script_tag');
+    _sNode.parentNode.insertBefore(_we, _sNode);
+  })(document);
+</script>
 
 
   </div>
