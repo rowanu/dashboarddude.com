@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Dashboard Reviews: Dusk"
-date: 2013-08-25 14:44
 comments: true
 categories: dashboard reviews Dusk graphite visualization
 ---
