@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dashboard | Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/blog/categories/dashboard/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-09-02T20:00:21-04:00</updated>
+  <updated>2013-09-09T09:36:40-04:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dashboard Reviews]]></title>
+    <link href="http://dashboarddude.com/blog/2013/09/09/dashboard-reviews/"/>
+    <updated>2013-09-09T10:00:00-04:00</updated>
+    <id>http://dashboarddude.com/blog/2013/09/09/dashboard-reviews</id>
+    <content type="html"><![CDATA[<p>In this new series of posts I will be reviewing (in detail) some of the more
+popular real-time dashboards out there.</p>
+
+<p>Most of the posts will focus on front-end dashboards for Graphite, but if there
+are any other types of dashboards you think would be good to review just <a href="mailto:rowan@dashboarddude.com">send me an email</a>.
+I will be doing a review of <a href="http://shopify.github.io/dashing/">Shopify's Dashing</a>, because it's one of my favourites.</p>
+
+<p>The first review (coming soon) will be on on <a href="http://obfuscurity.com/">Obfuscurity's</a>
+newest dashboard: <a href="https://github.com/obfuscurity/dusk">Dusk</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dashing Dashboard Widget Challenge: The Hotness]]></title>
