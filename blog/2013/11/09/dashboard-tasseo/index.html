@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Dashboard Dude</title>
+  <title>Dashboard: Tasseo - Dashboard Dude</title>
   <meta name="author" content="Rowan">
 
   
-  <meta name="description" content="Blog Archive 2013 Dashboard: Tasseo
-Nov 09 2013 posted in Graphite, JavaScript, Obfuscurity, Tasseo, dashboard, review, visualization Dashboard &hellip;">
+  <meta name="description" content="So I lied. The first of my series of dashboard reviews is NOT on Dusk, but one of
+Obfuscurity&#8217;s other great dashboards: Tasseo. Tasseo Tasseo &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ Nov 09 2013 posted in Graphite, JavaScript, Obfuscurity, Tasseo, dashboard, revi
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dashboarddude.com/blog/archives/">
+  <link rel="canonical" href="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,92 +83,148 @@ Nov 09 2013 posted in Graphite, JavaScript, Obfuscurity, Tasseo, dashboard, revi
     <div id="main">
       <div id="content">
         <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Dashboard: Tasseo</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-09T18:00:00-03:00" pubdate data-updated="true">Nov 9<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>So I lied. The first of my series of <a href="/blog/2013/09/09/dashboard-reviews/">dashboard reviews</a> is NOT on Dusk, but one of
+Obfuscurity&#8217;s other great dashboards: <a href="https://github.com/obfuscurity/tasseo">Tasseo</a>.</p>
 
-  
-  <h2>2013</h2>
+<h2>Tasseo</h2>
 
-<article>
-  
-<h1><a href="/blog/2013/11/09/dashboard-tasseo/">Dashboard: Tasseo</a></h1>
-<time datetime="2013-11-09T18:00:00-03:00" pubdate><span class='month'>Nov</span> <span class='day'>09</span> <span class='year'>2013</span></time>
+<p><a href="https://github.com/obfuscurity/tasseo">Tasseo</a> is a small, lightweight dashboard that&#8217;s good for throwing together a
+useful monitoring dashboard in a minimal amount of time. It&#8217;s built with
+<a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> graphs (themselves based on
+the fantastic JavaScript library <a href="http://d3js.org/">D3.js</a>) on top of a small
+<a href="http://www.sinatrarb.com/">Sinatra</a> application.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/obfuscurity/'>Obfuscurity</a>, <a class='category' href='/blog/categories/tasseo/'>Tasseo</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/review/'>review</a>, <a class='category' href='/blog/categories/visualization/'>visualization</a></span>
-</footer>
+<p><img src="https://github.com/obfuscurity/tasseo/raw/master/lib/tasseo/public/i/tasseo.png" title="Tasseo Dashboard" alt="graph" /></p>
 
-
-</article>
-
+<!--more-->
 
 
-<article>
-  
-<h1><a href="/blog/2013/09/09/dashboard-reviews/">Dashboard Reviews</a></h1>
-<time datetime="2013-09-09T10:00:00-03:00" pubdate><span class='month'>Sep</span> <span class='day'>09</span> <span class='year'>2013</span></time>
+<h3>Features</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/kpi/'>KPI</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/reviews/'>reviews</a>, <a class='category' href='/blog/categories/visualization/'>visualization</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li>Configuration for dashboards is done with simple JavaScript Objects.</li>
+<li>You can set value thresholds for changing the colour of a graph from green
+(default), yellow (warning), and red (critical).</li>
+</ul>
 
 
+<h3>Good For</h3>
 
-<article>
-  
-<h1><a href="/blog/2013/08/16/dashing-dashboard-widget-challenge-the-hotness/">Dashing Dashboard Widget Challenge: The Hotness</a></h1>
-<time datetime="2013-08-16T14:49:00-03:00" pubdate><span class='month'>Aug</span> <span class='day'>16</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/dashing/'>Dashing</a>, <a class='category' href='/blog/categories/challenge/'>challenge</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/widget/'>widget</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li><strong>Getting up and running quickly.</strong> There&#8217;s just enough configuration options,
+but not too many. This can get you from the default Graphite dashboards (which
+can be a bit hard on the eye) to a nice looking monitoring dashboard in minutes,
+not hours.</li>
+<li><strong>Showing specific, discrete metrics</strong> for a high-level operations dashboard.</li>
+<li>Metrics you want to set visual thresholds for.</li>
+</ul>
 
 
+<h3>Not so Good For</h3>
 
-<article>
-  
-<h1><a href="/blog/2013/04/30/installing-graphite-with-ceres-awesomeness/">Installing Graphite with Ceres Awesomeness</a></h1>
-<time datetime="2013-04-30T15:37:00-03:00" pubdate><span class='month'>Apr</span> <span class='day'>30</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ceres/'>Ceres</a>, <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/whisper/'>Whisper</a>, <a class='category' href='/blog/categories/carbon/'>carbon</a>, <a class='category' href='/blog/categories/daemon/'>daemon</a>, <a class='category' href='/blog/categories/database/'>database</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/01/23/dashboards-for-graphite/">Dashboards for Graphite</a></h1>
-<time datetime="2013-01-23T08:17:00-03:00" pubdate><span class='month'>Jan</span> <span class='day'>23</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cubism-js/'>Cubism.js</a>, <a class='category' href='/blog/categories/dashing/'>Dashing</a>, <a class='category' href='/blog/categories/descartes/'>Descartes</a>, <a class='category' href='/blog/categories/gdash/'>GDash</a>, <a class='category' href='/blog/categories/giraffe/'>Giraffe</a>, <a class='category' href='/blog/categories/graphexplorer/'>GraphExplorer</a>, <a class='category' href='/blog/categories/graphene/'>Graphene</a>, <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/graphiti/'>Graphiti</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/tasseo/'>Tasseo</a>, <a class='category' href='/blog/categories/d3-js/'>d3.js</a>, <a class='category' href='/blog/categories/dashboards/'>dashboards</a></span>
-</footer>
+<ul>
+<li><strong>Displaying large numbers of metrics.</strong> The layout eats in to your total
+space (if you want to display lots of similar metrics, look at horizon charts
+like Dusk instead).</li>
+<li><strong>Discovering new important metrics.</strong> Mainly because it doesn&#8217;t show a large
+number of metrics, you&#8217;re unlikely to find out new key metrics while using
+Tasseo.</li>
+<li><strong>Viewing metrics in detail over time.</strong> There&#8217;s no rulers showing you what
+the values in the chart represent, so it can be hard to know what the exact
+values were in the past. The current value is displayed numerically, so it&#8217;s not
+an issue if you&#8217;re only interested in historical trends - not values.</li>
+<li><strong>Zooming/investigating metrics on the dashboard.</strong> What you see is what you
+get, but it&#8217;s enough for a high-level monitoring dashboard.</li>
+</ul>
 
 
-</article>
+<h3>Links</h3>
 
+<p>Check it out on <a href="https://github.com/obfuscurity/tasseo">GitHub</a>.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Rowan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-09T18:00:00-03:00" pubdate data-updated="true">Nov 9<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/obfuscurity/'>Obfuscurity</a>, <a class='category' href='/blog/categories/tasseo/'>Tasseo</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/review/'>review</a>, <a class='category' href='/blog/categories/visualization/'>visualization</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/" data-via="" data-counturl="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/09/dashboard-reviews/" title="Previous Post: Dashboard Reviews">&laquo; Dashboard Reviews</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -234,7 +290,10 @@ Nov 09 2013 posted in Graphite, JavaScript, Obfuscurity, Tasseo, dashboard, revi
       var disqus_shortname = 'dashboarddude';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/';
+        var disqus_url = 'http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -299,7 +358,7 @@ SOFTWARE.
       hn_like.src = "http://hnlike.com/upvote.php?link="
                     + encodeURIComponent(document.location)
                     + "&title="
-                    + encodeURIComponent("Blog Archive");
+                    + encodeURIComponent("Dashboard: Tasseo");
       hn_like.innerHTML="iframes not supported by your browser";
       var twitter = document.getElementsByClassName("twitter-share-button")[0];
 

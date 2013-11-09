@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Javascript | Dashboard Dude]]></title>
+  <title><![CDATA[Category: JavaScript | Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-09-09T09:37:51-04:00</updated>
+  <updated>2013-11-09T17:44:37-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -14,164 +14,68 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Dashboards for Graphite]]></title>
-    <link href="http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite/"/>
-    <updated>2013-01-23T08:17:00-05:00</updated>
-    <id>http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite</id>
-    <content type="html"><![CDATA[<p>It's no secret I like <a href="http://graphite.wikidot.com/">Graphite</a> - it's a great example of Open Source software
-which is just as good (actually, it's even better) than similar closed-source,
-enterprise-grade (and much more <strong>expensive</strong>) software.</p>
+    <title type="html"><![CDATA[Dashboard: Tasseo]]></title>
+    <link href="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/"/>
+    <updated>2013-11-09T18:00:00-03:00</updated>
+    <id>http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo</id>
+    <content type="html"><![CDATA[<p>So I lied. The first of my series of <a href="/blog/2013/09/09/dashboard-reviews/">dashboard reviews</a> is NOT on Dusk, but one of
+Obfuscurity's other great dashboards: <a href="https://github.com/obfuscurity/tasseo">Tasseo</a>.</p>
 
-<p><img class="right" src="/images/posts/dashboards-for-graphite/boring.png" width="400" height="300" title="A bit dull..." ></p>
+<h2>Tasseo</h2>
 
-<p>While Graphite is fantastic, the front-end that comes with it leaves a little
-bit to be desired. You <em>can</em> use the built-in rendering and dashboard for viewing
-your system metrics, just like you <em>can</em> use Internet Explorer 6 to browse the
-Internet - it'll work, but <a href="http://www.quickmeme.com/meme/3osf83/">you're gonna have a bad time</a>.</p>
+<p><a href="https://github.com/obfuscurity/tasseo">Tasseo</a> is a small, lightweight dashboard that's good for throwing together a
+useful monitoring dashboard in a minimal amount of time. It's built with
+<a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> graphs (themselves based on
+the fantastic JavaScript library <a href="http://d3js.org/">D3.js</a>) on top of a small
+<a href="http://www.sinatrarb.com/">Sinatra</a> application.</p>
 
-<p>Thankfully, there are a lot of alternatives out there, but the <a href="http://graphite.readthedocs.org/en/latest/tools.html">Graphite Tools</a>
-page is a little out of date (with abandoned/incomplete projects), <strong>so here's a
-list or dashboards I have or would consider using...</strong></p>
+<p><img src="https://github.com/obfuscurity/tasseo/raw/master/lib/tasseo/public/i/tasseo.png" title="Tasseo Dashboard" alt="graph" /></p>
 
 <!--more-->
 
 
-<h2>Client-side Dashboards</h2>
+<h3>Features</h3>
 
-<p>These dashboards use the <a href="http://graphite.readthedocs.org/en/latest/render_api.html">Graphite Render API</a> to get data, and show them using
-some of the latest client-side Javascript libraries (like <a href="http://d3js.org/">D3.js</a>) to render
-graphs.</p>
+<ul>
+<li>Configuration for dashboards is done with simple JavaScript Objects.</li>
+<li>You can set value thresholds for changing the colour of a graph from green
+(default), yellow (warning), and red (critical).</li>
+</ul>
 
-<p>These dashboards usually <strong>perform noticeably better than the built-in renderer</strong>,
-because it shifts the rendering work to your browser, rather than the server
-(which is already working to retrieve the metrics from disk, etc).</p>
 
-<p><a href="https://github.com/kenhub/giraffe"><img class="right" src="/images/posts/dashboards-for-graphite/giraffe.png" width="150" height="300" title="Giraffe" ></a></p>
+<h3>Good For</h3>
 
-<h3><a href="https://github.com/kenhub/giraffe">Giraffe</a></h3>
+<ul>
+<li><strong>Getting up and running quickly.</strong> There's just enough configuration options,
+but not too many. This can get you from the default Graphite dashboards (which
+can be a bit hard on the eye) to a nice looking monitoring dashboard in minutes,
+not hours.</li>
+<li><strong>Showing specific, discrete metrics</strong> for a high-level operations dashboard.</li>
+<li>Metrics you want to set visual thresholds for.</li>
+</ul>
 
-<p>A <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a>-based (which is built on d3.js) dashboard with a nice interface for
-toggling metrics and changing the time period being shown on the fly.</p>
 
-<p>While I haven't used it personally, it looks good. My only concern is the
-performance, as even <a href="http://kenhub.github.com/giraffe/#dashboard=Demo&amp;timeFrame=1d">the small demo</a> is a bit slow.</p>
+<h3>Not so Good For</h3>
 
-<h3><a href="http://square.github.com/cubism/">Cubism.js</a></h3>
+<ul>
+<li><strong>Displaying large numbers of metrics.</strong> The layout eats in to your total
+space (if you want to display lots of similar metrics, look at horizon charts
+like Dusk instead).</li>
+<li><strong>Discovering new important metrics.</strong> Mainly because it doesn't show a large
+number of metrics, you're unlikely to find out new key metrics while using
+Tasseo.</li>
+<li><strong>Viewing metrics in detail over time.</strong> There's no rulers showing you what
+the values in the chart represent, so it can be hard to know what the exact
+values were in the past. The current value is displayed numerically, so it's not
+an issue if you're only interested in historical trends - not values.</li>
+<li><strong>Zooming/investigating metrics on the dashboard.</strong> What you see is what you
+get, but it's enough for a high-level monitoring dashboard.</li>
+</ul>
 
-<p><a href="http://square.github.com/cubism/"><img class="right" src="/images/posts/dashboards-for-graphite/cubism.js.png" width="400" height="300" title="Cubism.js" ></a>
-This is a great dashboard for fitting a large number of metrics on one screen.
-The horizon graph is suited to comparing many similar metrics, and the default
-colour scheme is really easy on the eyes, without loosing detail.</p>
 
-<p>While the current values are displayed, you'll need to mouse-over the previous
-updates which may not suit some dashboards.</p>
+<h3>Links</h3>
 
-<p><a href="http://jondot.github.com/graphene/"><img class="right" src="/images/posts/dashboards-for-graphite/graphene.png" width="400" height="300" title="Graphene" ></a></p>
-
-<h3><a href="http://jondot.github.com/graphene/">Graphene</a></h3>
-
-<p>A good general-purpose replacement for your Graphite dashboards.
-As you can see on its demo page, it has widgets for gauges and counters, if
-you're using <a href="https://github.com/etsy/statsd">StatsD's</a> extra features.</p>
-
-<p>It has a nice auto-discovery feature, which can convert your existing
-Graphite dashboards to their Graphene equivalent quickly, but I find the
-dark/high contrast/high intensity colour scheme tough to look at for long
-periods of time (but that can be changed with some extra CSS styling).</p>
-
-<h3><a href="https://github.com/obfuscurity/tasseo">Tasseo</a></h3>
-
-<p><a href="https://github.com/obfuscurity/tasseo"><img class="right" src="/images/posts/dashboards-for-graphite/tasseo.png" width="400" height="300" title="Tasseo" ></a>
-Another Rickshaw-based front-end, it's a very light-weight dashboard for viewing
-many different metrics (ie. they don't have to be on the same scale) at once.</p>
-
-<p>It Can be easily configured to change colour when certain thresholds are breached,
-which makes it nice as a high-level dashboard. It's not suited for long-term
-metric monitoring, as there are no y-axes drawn which can make working out
-historical values a bit hard.</p>
-
-<p>This is a dashboard by Jason Dixon, who also does the Descartes dashboard (see below).</p>
-
-<h2>Database-backed Dashboards</h2>
-
-<p>These databases have more features than the client-side dashboards, but require
-more set up and configuration to get running. Most reduce the load on your
-Graphite server by caching often-used data (eg. by using <a href="http://redis.io/">Redis</a>).</p>
-
-<p><a href="https://github.com/paperlesspost/graphiti"><img class="right" src="/images/posts/dashboards-for-graphite/graphiti.jpeg" width="400" height="300" title="Graphiti" ></a></p>
-
-<h3><a href="https://github.com/paperlesspost/graphiti">Graphiti</a></h3>
-
-<p>A Redis-backed dashboard replacement which uses JSON to configure graphs. It
-uses Redis as a metric and settings cache, and it has the ability to store
-snapshots of your graphs on Amazon's S3. One thing to note is that it
-deliberately doesn't do authentication - it makes the (not unreasonable)
-assumption that your Graphite data and dashboards are not on a public network.</p>
-
-<h3><a href="https://github.com/obfuscurity/descartes">Descartes</a></h3>
-
-<p>Definitely the most comprehensive replacement for Graphite's built-in dashboard
-so far, which isn't really surprising given it's by Jason Dixon (see below).
-It depends on Redis and PostreSQL, which also puts it at the top of the
-requirements list.</p>
-
-<p><a href="https://github.com/obfuscurity/descartes"><img class="right" src="/images/posts/dashboards-for-graphite/descartes.png" width="400" height="200" title="Descartes" ></a>
-It has the ability to set templates for graphs, and uses sparklines to give you
-a high-level overview of your metrics and help you decide what you want to
-include in your dashboard, which is always useful.</p>
-
-<p>Authentication of users can be done with Goolge OpenID or Github, and comes
-with great instructions on how to deploy to Heroku, which will help you get up
-and running quickly.</p>
-
-<p>While I haven't had a chance to use Descartes myself, I would trust anything
-that <a href="https://github.com/obfuscurity">Jason Dixon</a> puts out - he is one of the <a href="https://github.com/graphite-project?tab=members">Graphite Project</a> maintainers
-and did the Tasseo dashboard (see above), so you know he knows his stuff.
-His blog is full of useful <a href="http://obfuscurity.com/Tags/Graphite">Graphite tips</a>.</p>
-
-<h2>Other Dashboards</h2>
-
-<p>While not specifically Graphite dashboards, the following get an honourable
-mention:</p>
-
-<h3><a href="https://github.com/ripienaar/gdash">GDash</a></h3>
-
-<p><a href="https://github.com/ripienaar/gdash"><img class="right" src="/images/posts/dashboards-for-graphite/gdash.png" width="200" height="100" title="GDash" ></a>
-This dashboard is not client-side (it uses Graphite's internal renderer for
-images) or database backed, so it's more of a "skin" on the default dashboard.
-It lets you configure your dashboards using YAML, and is built on the Twitter
-Bootstrap web-framework.</p>
-
-<h3><a href="https://github.com/Dieterbe/graph-explorer">Graph Explorer</a></h3>
-
-<p><a href="https://github.com/Dieterbe/graph-explorer"><img class="right" src="/images/posts/dashboards-for-graphite/explorer.png" width="300" height="150" title="Graph Explorer" ></a>
-While this isn't a dashboard (like the others in this list), it's a new take on
-metric exploration for Graphite. Made to be very interactive, it can definitely
-help you decide what metrics to include in your dashboard. The nice thing is
-that he graphs created are interactive, which is a big improvement over the
-usual metric explorer built-in to Graphite.</p>
-
-<h3><a href="http://shopify.github.com/dashing/">Dashing</a></h3>
-
-<p><a href="http://shopify.github.com/dashing/"><img class="left" src="/images/posts/dashboards-for-graphite/dashing.png" width="200" height="200" title="Dashing" ></a>
-A general-purpose dashboard by the boffins at <a href="http://www.shopify.com/">Shopify</a>, Dashing can accept data
-from many different sources, and display many different types of data through
-various widgets. This includes being able to display Graphite data through
-direct calls to the Render URL API (you'll have to roll them yourself), and
-display them using their Rickshaw graph widget.</p>
-
-<p>I'm a big fan or Dashing for non-technical dashboards because it can accept so
-many types/sources of data, and looks great out of the box. They also have a
-gauge widget which works really nicely with the StatsD's gauge metrics.
-The have a <a href="http://dashingdemo.herokuapp.com/sampletv">great demo of the various widgets in action</a>.</p>
-
-<h2>Need Help?</h2>
-
-<p>There you have it! Let me your personal experiences and recommendations with
-these dashboards, or if I missed any you think are worthwhile in the comments below.</p>
-
-<p>If you need any help setting up any of these dashboards, or Graphite itself,
-check out <a href="/services">my dashboard consulting services</a> and <a href="/contact">get in touch with me</a>.</p>
+<p>Check it out on <a href="https://github.com/obfuscurity/tasseo">GitHub</a>.</p>
 ]]></content>
   </entry>
   
