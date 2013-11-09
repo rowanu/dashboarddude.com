@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tasseo | Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/blog/categories/tasseo/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-11-09T17:44:37-03:00</updated>
+  <updated>2013-11-09T17:58:46-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -76,6 +76,27 @@ get, but it's enough for a high-level monitoring dashboard.</li>
 <h3>Links</h3>
 
 <p>Check it out on <a href="https://github.com/obfuscurity/tasseo">GitHub</a>.</p>
+
+<h2>More to Come</h2>
+
+<p>If you're interested in finding out more about JavaScript dashboards for
+Graphite, don't forget to sign up to the mailing list!</p>
+
+<!-- Begin MailChimp Signup Form -->
+
+
+<div id="mc_embed_signup" style="text-align: center;">
+<form action="http://learnfastmath.us2.list-manage.com/subscribe/post?u=73d02cd94a0c4a3fa258d4d12&amp;id=9d0805d199" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <label for="mce-EMAIL">Get Updates From The Dude</label>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+    id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+
+<!--End mc_embed_signup-->
+
 ]]></content>
   </entry>
   
