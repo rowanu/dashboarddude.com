@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Graphite | Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/blog/categories/graphite/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-11-12T20:40:03-03:00</updated>
+  <updated>2013-12-16T14:52:36-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dashboard: Giraffe]]></title>
+    <link href="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/"/>
+    <updated>2013-12-16T16:00:00-03:00</updated>
+    <id>http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe</id>
+    <content type="html"><![CDATA[<p>Giraffe is great example of what's possible with a JavaScript-only dashboard on top of Graphite data.</p>
+
+<p>Like many other Graphite dashboards, it's built on top of <a href="">D3.js</a>. It differs slightly because it's made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
+
+<p><img src="/images/posts/dashboard-giraffe/demo.png" title="Giraffe Dashboard" alt="graph" /></p>
+
+<!--more-->
+
+
+<h3>Features</h3>
+
+<ul>
+<li>Stackable metrics.</li>
+<li>One-click changing between (pre-set) time periods.</li>
+<li>Customizable summary methods and display information.</li>
+<li>Configuration is done with JavaScript objects.</li>
+</ul>
+
+
+<h3>Good For</h3>
+
+<ul>
+<li><strong>Browsing time periods</strong> is really easy. With one click you can see you metrics with fidelity from 10 minutes to 7 weeks (and a bunch of sensible values in-between).</li>
+<li><strong>No server is required</strong>, so getting up and running is as simple as editing <code>dashboard.js</code> and opening the directory in your browser locally.</li>
+<li><strong>Detailed example dashboards</strong> are provided, so you can follow along.</li>
+<li><strong>Stacking similar metrics</strong> is a simple as using a wildcard or specifying multiple targets, and they'll all show up on one graph.</li>
+<li><strong>Its summary details/legend</strong> can be shown/hidden as part of the display. It includes things like the range of values over the viewed time period, which is a nice time-saver for relevant metrics.</li>
+</ul>
+
+
+<h3>Not so Good For</h3>
+
+<ul>
+<li><strong>Viewing lots of metrics</strong> starts to eat a lot of RAM (regardless of how they're laid out). This issue is probably caused by Rickshaw (rather than Giraffe), but knowing that doesn't solve the problem.</li>
+<li><strong>The layout doesn't use the all space available</strong>, which makes it less attractive as a monitoring dashboard. The config defaults to a 3-graphs-per-row layout, and while you can make graphs span multiple columns (even more than the default 3), I couldn't get the graphs to scale-out to my wide display.</li>
+<li><strong>Fine metrics being compared to each other</strong> can be difficult to see because multiple metrics on one graph are stacked. Being stacked means that the ordering of the metrics is important, and it's not easy to change on the fly (you have to edit the dashboard configuration object). Note that you can toggle the visibility of metrics in the interface, but this still requires some manual intervention.</li>
+<li><strong>Configuration is a bit complicated</strong>, but only because  there are a lot of options/aliases/etc. It's much easier to set up when you already have a clear idea of the metrics you want to display.</li>
+</ul>
+
+
+<h2>Summary</h2>
+
+<p>I would use this dashboard to quickly access and browse (historically) metrics that I know are important, but might not be my 'top' monitoring metrics.</p>
+
+<p>I don't think I would use this as my main monitoring dashboard (ie. on a big-screen for everyone to see all the time) because of the manual intervention and fine-grained detail, but those extra details make it a good for specific metrics/tasks.</p>
+
+<h2>Links</h2>
+
+<ul>
+<li>Check out a <a href="http://giraffe.kenhub.com/">sample dashboard</a>.</li>
+<li>The project <a href="https://github.com/kenhub/giraffe">GitHub page</a>.</li>
+</ul>
+
+
+<h2>More to Come</h2>
+
+<p>If you're interested in finding out more about JavaScript dashboards for
+Graphite, don't forget to sign up to the mailing list!</p>
+
+<!-- Begin MailChimp Signup Form -->
+
+
+<div id="mc_embed_signup" style="text-align: center;">
+<form action="http://learnfastmath.us2.list-manage.com/subscribe/post?u=73d02cd94a0c4a3fa258d4d12&amp;id=9d0805d199" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <label for="mce-EMAIL">Get Updates From The Dude</label>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+    id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+
+<!--End mc_embed_signup-->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dashboard: Tasseo]]></title>

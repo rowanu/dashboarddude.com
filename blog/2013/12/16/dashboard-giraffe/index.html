@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Dashboard: Tasseo - Dashboard Dude</title>
+  <title>Dashboard: Giraffe - Dashboard Dude</title>
   <meta name="author" content="Rowan">
 
   
-  <meta name="description" content="So I lied. The first of my series of dashboard reviews is NOT on Dusk, but one of
-Obfuscurity&#8217;s other great dashboards: Tasseo. Tasseo Tasseo &hellip;">
+  <meta name="description" content="Giraffe is great example of what&#8217;s possible with a JavaScript-only dashboard on top of Graphite data. Like many other Graphite dashboards, it&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Obfuscurity&#8217;s other great dashboards: Tasseo. Tasseo Tasseo &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/">
+  <link rel="canonical" href="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -87,7 +86,7 @@ Obfuscurity&#8217;s other great dashboards: Tasseo. Tasseo Tasseo &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Dashboard: Tasseo</h1>
+      <h1 class="entry-title">Dashboard: Giraffe</h1>
     
     
       <p class="meta">
@@ -103,25 +102,18 @@ Obfuscurity&#8217;s other great dashboards: Tasseo. Tasseo Tasseo &hellip;">
   
 
 
-<time datetime="2013-11-09T18:00:00-03:00" pubdate data-updated="true">Nov 9<span>th</span>, 2013</time>
+<time datetime="2013-12-16T16:00:00-03:00" pubdate data-updated="true">Dec 16<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So I lied. The first of my series of <a href="/blog/2013/09/09/dashboard-reviews/">dashboard reviews</a> is NOT on Dusk, but one of
-Obfuscurity&#8217;s other great dashboards: <a href="https://github.com/obfuscurity/tasseo">Tasseo</a>.</p>
+<div class="entry-content"><p>Giraffe is great example of what&#8217;s possible with a JavaScript-only dashboard on top of Graphite data.</p>
 
-<h2>Tasseo</h2>
+<p>Like many other Graphite dashboards, it&#8217;s built on top of <a href="">D3.js</a>. It differs slightly because it&#8217;s made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
 
-<p><a href="https://github.com/obfuscurity/tasseo">Tasseo</a> is a small, lightweight dashboard that&#8217;s good for throwing together a
-useful monitoring dashboard in a minimal amount of time. It&#8217;s built with
-<a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> graphs (themselves based on
-the fantastic JavaScript library <a href="http://d3js.org/">D3.js</a>) on top of a small
-<a href="http://www.sinatrarb.com/">Sinatra</a> application.</p>
-
-<p><img src="https://github.com/obfuscurity/tasseo/raw/master/lib/tasseo/public/i/tasseo.png" title="Tasseo Dashboard" alt="graph" /></p>
+<p><img src="/images/posts/dashboard-giraffe/demo.png" title="Giraffe Dashboard" alt="graph" /></p>
 
 <!--more-->
 
@@ -129,45 +121,47 @@ the fantastic JavaScript library <a href="http://d3js.org/">D3.js</a>) on top of
 <h3>Features</h3>
 
 <ul>
-<li>Configuration for dashboards is done with simple JavaScript Objects.</li>
-<li>You can set value thresholds for changing the colour of a graph from green
-(default), yellow (warning), and red (critical).</li>
+<li>Stackable metrics.</li>
+<li>One-click changing between (pre-set) time periods.</li>
+<li>Customizable summary methods and display information.</li>
+<li>Configuration is done with JavaScript objects.</li>
 </ul>
 
 
 <h3>Good For</h3>
 
 <ul>
-<li><strong>Getting up and running quickly.</strong> There&#8217;s just enough configuration options,
-but not too many. This can get you from the default Graphite dashboards (which
-can be a bit hard on the eye) to a nice looking monitoring dashboard in minutes,
-not hours.</li>
-<li><strong>Showing specific, discrete metrics</strong> for a high-level operations dashboard.</li>
-<li>Metrics you want to set visual thresholds for.</li>
+<li><strong>Browsing time periods</strong> is really easy. With one click you can see you metrics with fidelity from 10 minutes to 7 weeks (and a bunch of sensible values in-between).</li>
+<li><strong>No server is required</strong>, so getting up and running is as simple as editing <code>dashboard.js</code> and opening the directory in your browser locally.</li>
+<li><strong>Detailed example dashboards</strong> are provided, so you can follow along.</li>
+<li><strong>Stacking similar metrics</strong> is a simple as using a wildcard or specifying multiple targets, and they&#8217;ll all show up on one graph.</li>
+<li><strong>Its summary details/legend</strong> can be shown/hidden as part of the display. It includes things like the range of values over the viewed time period, which is a nice time-saver for relevant metrics.</li>
 </ul>
 
 
 <h3>Not so Good For</h3>
 
 <ul>
-<li><strong>Displaying large numbers of metrics.</strong> The layout eats in to your total
-space (if you want to display lots of similar metrics, look at horizon charts
-like Dusk instead).</li>
-<li><strong>Discovering new important metrics.</strong> Mainly because it doesn&#8217;t show a large
-number of metrics, you&#8217;re unlikely to find out new key metrics while using
-Tasseo.</li>
-<li><strong>Viewing metrics in detail over time.</strong> There&#8217;s no rulers showing you what
-the values in the chart represent, so it can be hard to know what the exact
-values were in the past. The current value is displayed numerically, so it&#8217;s not
-an issue if you&#8217;re only interested in historical trends - not values.</li>
-<li><strong>Zooming/investigating metrics on the dashboard.</strong> What you see is what you
-get, but it&#8217;s enough for a high-level monitoring dashboard.</li>
+<li><strong>Viewing lots of metrics</strong> starts to eat a lot of RAM (regardless of how they&#8217;re laid out). This issue is probably caused by Rickshaw (rather than Giraffe), but knowing that doesn&#8217;t solve the problem.</li>
+<li><strong>The layout doesn&#8217;t use the all space available</strong>, which makes it less attractive as a monitoring dashboard. The config defaults to a 3-graphs-per-row layout, and while you can make graphs span multiple columns (even more than the default 3), I couldn&#8217;t get the graphs to scale-out to my wide display.</li>
+<li><strong>Fine metrics being compared to each other</strong> can be difficult to see because multiple metrics on one graph are stacked. Being stacked means that the ordering of the metrics is important, and it&#8217;s not easy to change on the fly (you have to edit the dashboard configuration object). Note that you can toggle the visibility of metrics in the interface, but this still requires some manual intervention.</li>
+<li><strong>Configuration is a bit complicated</strong>, but only because  there are a lot of options/aliases/etc. It&#8217;s much easier to set up when you already have a clear idea of the metrics you want to display.</li>
 </ul>
 
 
-<h3>Links</h3>
+<h2>Summary</h2>
 
-<p>Check it out on <a href="https://github.com/obfuscurity/tasseo">GitHub</a>.</p>
+<p>I would use this dashboard to quickly access and browse (historically) metrics that I know are important, but might not be my &#8216;top&#8217; monitoring metrics.</p>
+
+<p>I don&#8217;t think I would use this as my main monitoring dashboard (ie. on a big-screen for everyone to see all the time) because of the manual intervention and fine-grained detail, but those extra details make it a good for specific metrics/tasks.</p>
+
+<h2>Links</h2>
+
+<ul>
+<li>Check out a <a href="http://giraffe.kenhub.com/">sample dashboard</a>.</li>
+<li>The project <a href="https://github.com/kenhub/giraffe">GitHub page</a>.</li>
+</ul>
+
 
 <h2>More to Come</h2>
 
@@ -211,12 +205,12 @@ Graphite, don&#8217;t forget to sign up to the mailing list!</p>
   
 
 
-<time datetime="2013-11-09T18:00:00-03:00" pubdate data-updated="true">Nov 9<span>th</span>, 2013</time>
+<time datetime="2013-12-16T16:00:00-03:00" pubdate data-updated="true">Dec 16<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/obfuscurity/'>Obfuscurity</a>, <a class='category' href='/blog/categories/tasseo/'>Tasseo</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/review/'>review</a>, <a class='category' href='/blog/categories/visualization/'>visualization</a>
+    <a class='category' href='/blog/categories/giraffe/'>Giraffe</a>, <a class='category' href='/blog/categories/graphite/'>Graphite</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/dashboard/'>dashboard</a>, <a class='category' href='/blog/categories/review/'>review</a>, <a class='category' href='/blog/categories/visualization/'>visualization</a>
   
 </span>
 
@@ -225,7 +219,7 @@ Graphite, don&#8217;t forget to sign up to the mailing list!</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/" data-via="" data-counturl="http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/" data-via="" data-counturl="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/" >Tweet</a>
   
   
   
@@ -234,10 +228,8 @@ Graphite, don&#8217;t forget to sign up to the mailing list!</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/09/dashboard-reviews/" title="Previous Post: Dashboard Reviews">&laquo; Dashboard Reviews</a>
+        <a class="basic-alignment left" href="/blog/2013/11/09/dashboard-tasseo/" title="Previous Post: Dashboard: Tasseo">&laquo; Dashboard: Tasseo</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/12/16/dashboard-giraffe/" title="Next Post: Dashboard: Giraffe">Dashboard: Giraffe &raquo;</a>
       
     </p>
   </footer>
@@ -314,8 +306,8 @@ Graphite, don&#8217;t forget to sign up to the mailing list!</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/';
-        var disqus_url = 'http://dashboarddude.com/blog/2013/11/09/dashboard-tasseo/';
+        var disqus_identifier = 'http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/';
+        var disqus_url = 'http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -381,7 +373,7 @@ SOFTWARE.
       hn_like.src = "http://hnlike.com/upvote.php?link="
                     + encodeURIComponent(document.location)
                     + "&title="
-                    + encodeURIComponent("Dashboard: Tasseo");
+                    + encodeURIComponent("Dashboard: Giraffe");
       hn_like.innerHTML="iframes not supported by your browser";
       var twitter = document.getElementsByClassName("twitter-share-button")[0];
 
