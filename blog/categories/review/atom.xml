@@ -4,7 +4,7 @@
   <title><![CDATA[Category: review | Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/blog/categories/review/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-12-16T14:52:36-03:00</updated>
+  <updated>2013-12-27T17:14:55-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -18,9 +18,7 @@
     <link href="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/"/>
     <updated>2013-12-16T16:00:00-03:00</updated>
     <id>http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe</id>
-    <content type="html"><![CDATA[<p>Giraffe is great example of what's possible with a JavaScript-only dashboard on top of Graphite data.</p>
-
-<p>Like many other Graphite dashboards, it's built on top of <a href="">D3.js</a>. It differs slightly because it's made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
+    <content type="html"><![CDATA[<p>Giraffe is great example of what's possible with a JavaScript-only dashboard on top of Graphite data. Like many other Graphite dashboards, it's built on top of <a href="">D3.js</a>. It differs slightly because it's made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
 
 <p><img src="/images/posts/dashboard-giraffe/demo.png" title="Giraffe Dashboard" alt="graph" /></p>
 
@@ -64,7 +62,7 @@
 
 <p>I don't think I would use this as my main monitoring dashboard (ie. on a big-screen for everyone to see all the time) because of the manual intervention and fine-grained detail, but those extra details make it a good for specific metrics/tasks.</p>
 
-<h2>Links</h2>
+<h3>Links</h3>
 
 <ul>
 <li>Check out a <a href="http://giraffe.kenhub.com/">sample dashboard</a>.</li>

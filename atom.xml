@@ -4,7 +4,7 @@
   <title><![CDATA[Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-12-16T14:52:36-03:00</updated>
+  <updated>2013-12-27T17:14:55-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -14,13 +14,59 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Hosted Dashboards for Graphite]]></title>
+    <link href="http://dashboarddude.com/blog/2013/12/22/hosted-dashboards-for-graphite/"/>
+    <updated>2013-12-22T10:37:00-03:00</updated>
+    <id>http://dashboarddude.com/blog/2013/12/22/hosted-dashboards-for-graphite</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Are you bored with the built-in Graphite dashboards?</p></li>
+<li><p>Need something <strong>shiny and cool</strong> to impress your (pointy-haired) boss?</p></li>
+<li><p>Want JavaScript dashboards but <strong>don&#8217;t want to learn JavaScript?</strong></p></li>
+</ul>
+
+
+<p><em>Pretend sales pitch aside</em>, I&#8217;m playing around with a side project that will give Graphite dashboards-as-a-service. It&#8217;s goal is to make setting-up and using good looking, real-time reporting and monitoring dashboards a breeze.</p>
+
+<!--more-->
+
+
+<p>The first dashboards that will be available will be <a href="http://square.github.io/cubism/">Cubism</a> and <a href="https://github.com/obfuscurity/tasseo">Tasseo</a>, with others to follow soon. It will work with any Graphite install that has CORS enabled, which means it can work with your own installation or a hosted solution. You won&#8217;t have to open your Graphite up to the Internet either - it will work even if your Graphite is behind by a firewall.</p>
+
+<p>If this is something you&#8217;d be interested in, sign up below to get updates when it&#8217;s ready.</p>
+
+<!-- Begin MailChimp Signup Form -->
+
+
+<p><link href="http://dashboarddude.com//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"></p>
+
+
+
+<div id="mc_embed_signup">
+<center>
+<form action="http://dashboarddude.us2.list-manage.com/subscribe/post?u=73d02cd94a0c4a3fa258d4d12&amp;id=8057fc28fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <label for="mce-EMAIL">Get updates for hosted Graphite dashboards</label>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_73d02cd94a0c4a3fa258d4d12_8057fc28fa" value=""></div>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</center>
+</div>
+
+
+
+
+<!--End mc_embed_signup-->
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Dashboard: Giraffe]]></title>
     <link href="http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/"/>
     <updated>2013-12-16T16:00:00-03:00</updated>
     <id>http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe</id>
-    <content type="html"><![CDATA[<p>Giraffe is great example of what&#8217;s possible with a JavaScript-only dashboard on top of Graphite data.</p>
-
-<p>Like many other Graphite dashboards, it&#8217;s built on top of <a href="">D3.js</a>. It differs slightly because it&#8217;s made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
+    <content type="html"><![CDATA[<p>Giraffe is great example of what&#8217;s possible with a JavaScript-only dashboard on top of Graphite data. Like many other Graphite dashboards, it&#8217;s built on top of <a href="">D3.js</a>. It differs slightly because it&#8217;s made with the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw graphing library</a> instead of using D3.js directly, which gives it some nice polish.</p>
 
 <p><img src="http://dashboarddude.com/images/posts/dashboard-giraffe/demo.png" title="Giraffe Dashboard" alt="graph" /></p>
 
@@ -64,7 +110,7 @@
 
 <p>I don&#8217;t think I would use this as my main monitoring dashboard (ie. on a big-screen for everyone to see all the time) because of the manual intervention and fine-grained detail, but those extra details make it a good for specific metrics/tasks.</p>
 
-<h2>Links</h2>
+<h3>Links</h3>
 
 <ul>
 <li>Check out a <a href="http://giraffe.kenhub.com/">sample dashboard</a>.</li>

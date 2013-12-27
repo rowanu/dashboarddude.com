@@ -26,7 +26,11 @@
     </url>
     <url>
         <loc>http://dashboarddude.com/blog/2013/12/16/dashboard-giraffe/</loc>
-        <lastmod>2013-12-16T14:52:29-03:00</lastmod>
+        <lastmod>2013-12-16T14:54:10-03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dashboarddude.com/blog/2013/12/22/hosted-dashboards-for-graphite/</loc>
+        <lastmod>2013-12-27T17:07:23-03:00</lastmod>
     </url>
     <url>
         <loc>http://dashboarddude.com/about/</loc>
@@ -38,11 +42,11 @@
     </url>
     <url>
         <loc>http://dashboarddude.com/blog/archives/</loc>
-        <lastmod>2013-12-16T14:52:29-03:00</lastmod>
+        <lastmod>2013-12-27T17:07:23-03:00</lastmod>
     </url>
     <url>
         <loc>http://dashboarddude.com/</loc>
-        <lastmod>2013-12-16T14:52:29-03:00</lastmod>
+        <lastmod>2013-12-27T17:07:23-03:00</lastmod>
     </url>
     <url>
         <loc>http://dashboarddude.com/services/</loc>
