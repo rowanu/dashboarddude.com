@@ -4,7 +4,7 @@
   <title><![CDATA[Dashboard Dude]]></title>
   <link href="http://dashboarddude.com/atom.xml" rel="self"/>
   <link href="http://dashboarddude.com/"/>
-  <updated>2013-12-27T17:14:55-03:00</updated>
+  <updated>2014-01-07T12:56:35-03:00</updated>
   <id>http://dashboarddude.com/</id>
   <author>
     <name><![CDATA[Rowan]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Book Review: Data Visualization with D3.js Cookbook]]></title>
+    <link href="http://dashboarddude.com/blog/2014/01/08/book-review-data-visualization-with-d3-dot-js-cookbook/"/>
+    <updated>2014-01-08T12:00:00-03:00</updated>
+    <id>http://dashboarddude.com/blog/2014/01/08/book-review-data-visualization-with-d3-dot-js-cookbook</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://dashboarddude.com/images/posts/d3-cookbook/cover.jpg" width="250" height="250" title="Data Visualization with D3.js Cookbook" ></p>
+
+<p>This is the D3.js book I wish I had when I started learning it. Even though it says &#8220;Cookbook&#8221;, it&#8217;s a great reference for people who are just starting to learn D3.js.</p>
+
+<p>The author (Nick Qi Zhu) is the maker of <a href="http://nickqizhu.github.io/dc.js/">DC.js</a>, which is a cool <a href="http://square.github.io/crossfilter/">CrossFilter</a>-based extension which can be used for making really nice interactive reports and dashboards. It&#8217;s nice to have an author with a proven record, and this was the main reason I decided to read the book.</p>
+
+<!--more-->
+
+
+<p>Part of D3&#8217;s power and utility comes from the way it handles the binding of data to the DOM, which is quite  different from previous ways of approaching the problem.
+By literally being &#8220;Data Driven Documents&#8221; (which is what &#8220;D3&#8221; stands for), it makes the creating <em>and updating</em> of visualisations a breeze. This book goes a long way to flattening-out the steep learning curve that D3 has.</p>
+
+<p>Once you&#8217;ve made this mental leap to D3&#8217;s way of thinking, the library becomes much much easier to use. Nick&#8217;s approach of giving short, simple examples and then breaking them down line-by-line really works well for cementing the ideas with concrete practice.</p>
+
+<p>The structure of the chapters is really well done, and eases you in to D3 by starting out with simpler examples, and building on them as the chapters go along. It starts by drawing simple graphs, then introducing scales (for graphing more interesting data), and then axes on top of that (and so on):</p>
+
+<ul>
+<li>Chapter 1: Getting Started</li>
+<li>Chapter 2: Be Selective</li>
+<li>Chapter 3: Dealing with Data</li>
+<li>Chapter 4: Tipping the Scales</li>
+<li>Chapter 5: Play with Axes</li>
+<li>Chapter 6: Transition with Style</li>
+<li>Chapter 7: Getting into Shape</li>
+<li>Chapter 8: Chart them up</li>
+<li>Chapter 9: Lay them out</li>
+<li>Chapter 10: Well Behaved Visualization</li>
+<li>Chapter 11: Feel the Force</li>
+<li>Chapter 12: Know your map</li>
+<li>Chapter 13: Test drive your visualization</li>
+</ul>
+
+
+<p>The layout of the example code given in the book (which you can get <a href="https://github.com/NickQiZhu/d3-cookbook">from GitHub</a>) is probably the best of any technical book I&#8217;ve had. Once you&#8217;ve started a local web server, you can quickly check out all the examples chapter-by-chapter. If you want a more detailed insight to what the book covers, go and get the code yourself and have a look.</p>
+
+<p>The only thing I would&#8217;ve liked to see different is a quicker switch to creating SVG-based graphs (rather than just relying on HTML/CSS). As it stands, it&#8217;s probably an easier switch for people coming from HTML/CSS backgrounds (which I imagine is most readers).</p>
+
+<p>I read the O&#8217;Reilly (.mobi) version of this book on a Kindle, and the formatting was good. Reading code is always a bit of a hassle on Kindle, but by repeating the important snippets when they&#8217;re being explained, it is very understandable.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hosted Dashboards for Graphite]]></title>
